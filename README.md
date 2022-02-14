@@ -14,6 +14,11 @@ Edit install.conf.yaml as needed
 ## Credits
 ## Licence
 
+## Todo
+- manage different git settings based on folder
+- git settings in general
+- terminal setup (in dotfiles?)
+- macos defaults
 ## Other
 
 ZSH dotfiles load order:
