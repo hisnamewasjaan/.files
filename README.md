@@ -17,7 +17,8 @@ Edit install.conf.yaml as needed
 ## Todo
 - manage different git settings based on folder
 - git settings in general
-- terminal setup (in dotfiles?)
+- terminal setup, font, colors etc (in dotfiles?)
+- add omz plugins, dotenv
 - macos defaults
 ## Other
 
