@@ -73,7 +73,24 @@ ZSH_THEME="eastwood"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dotenv)
+plugins=(
+  git
+#   gitfast
+#   github
+  dotenv
+  isodate
+#   iterm2
+#   jira
+#   mix
+#   mix-fast
+#   password
+#   ripgrep
+#   rsync
+#   safe-paste
+#   sudo
+#   systemadmin
+#   taskwarrior
+  )
 
 source $ZSH/oh-my-zsh.sh
 
