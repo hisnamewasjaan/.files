@@ -18,3 +18,4 @@
     ~/.zprofile: zprofile
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/ohmyzsh
+    ~/.p10k.zsh: zsh/p10k.zsh
