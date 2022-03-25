@@ -101,6 +101,7 @@ brew "ssh-copy-id", link: true
 brew "task"
 brew "telnet"
 brew "tidy-html5"
+brew "tig"
 brew "tldr"
 brew "tmux"
 brew "tnftp"
@@ -138,7 +139,7 @@ mas "IP Scanner", id: 404167149
 mas "iPhoto", id: 408981381
 mas "Ka-Block!", id: 1335413823
 mas "Keynote", id: 409183694
-mas "Keys", id: 1494642810
+mas "Keys Multiplatform", id: 1494642810
 mas "Numbers", id: 409203825
 mas "OmniGraffle", id: 1142578753
 mas "Pages", id: 409201541
