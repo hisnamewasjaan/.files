@@ -12,7 +12,7 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 # 4 space indentation
-[{*.java,*.groovy}]
+[{*.java,*.groovy,*.gradle}]
 indent_style = space
 indent_size = 4
 continuation_indent_size = 8
