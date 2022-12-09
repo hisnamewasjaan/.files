@@ -27,7 +27,16 @@ Adjust [zshrc](zsh/zshrc) to your liking. Theme, plugins etc
 
 ## Usage
 
-Edit install.conf.yaml as needed
+Edit [install.conf.yaml](install.conf.yaml) as needed
+
+Check [dotbot](https://github.com/anishathalye/dotbot) for more info
+
+## Other
+run
+```shell
+make
+```
+to see other option
 
 ## Contributing
 
