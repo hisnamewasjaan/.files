@@ -19,3 +19,4 @@
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/ohmyzsh
     ~/.p10k.zsh: zsh/p10k.zsh
+    ~/.sdkman/etc/config: sdkman/config
