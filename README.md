@@ -1,8 +1,25 @@
 # dot files
 
-Managed using dotbot|https://github.com/anishathalye/dotbot
+Managed using [dotbot](https://github.com/anishathalye/dotbot)
+
+Keeps ohmyzsh as a git submodule.
 
 ## Installation
+
+clone into `~/.dotfiles` with `--recurse-submodules` flag
+```
+git clone --recurse-submodules git@github.com:hisnamewasjaan/.files.git ~/.dotfiles
+```
+
+or get ohmyzsh submodule afterwards
+```
+git clone git@github.com:hisnamewasjaan/.files.git ~/.dotfiles
+git submodule init
+git submodule update
+```
+
+Adjust [zshrc](zsh/zshrc) to your liking. Theme, plugins etc
+
 
 ```
 ./install
