@@ -15,7 +15,7 @@ install: ## Run dotbot install script
 
 # Save snapshot of all Homebrew packages to macos/Brewfile
 brew: ## Save snapshot of all Homebrew packages to macos/Brewfile
-	brew bundle dump -f --file=macos/Brewfile
+	brew bundle dump -f --describe --file=macos/Brewfile
 	brew bundle --force cleanup --file=macos/Brewfile
 
 # Restore Homebrew packages

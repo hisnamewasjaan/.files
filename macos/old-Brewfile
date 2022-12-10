@@ -1,0 +1,189 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+brew "archey4"
+brew "automake"
+brew "awscli"
+brew "bash"
+brew "bash-git-prompt"
+brew "node"
+brew "bower"
+brew "freetype"
+brew "glib"
+brew "coreutils"
+brew "libevent"
+brew "gnutls"
+brew "cask"
+brew "certbot"
+brew "cmake"
+# DuckDuckGo from the terminal
+brew "ddgr"
+brew "docker-compose"
+brew "docker-credential-helper"
+brew "wxwidgets"
+brew "erlang"
+brew "elixir"
+# Charset analyzer and converter
+brew "enca"
+# Modern replacement for 'ls'
+brew "exa"
+# Command-line tool to interact with exercism.io
+brew "exercism"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
+# Graphics library to dynamically manipulate images
+brew "gd"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
+# This library is for the GeoIP Legacy format (dat)
+brew "geoip"
+# Distributed revision control system
+brew "git"
+brew "git-absorb"
+# Small git utilities
+brew "git-extras"
+# brew "git-fixup"
+# Open GitHub webpages from a terminal
+brew "git-open"
+# Interactive command-line tool for using emoji in commit messages
+brew "gitmoji"
+# Open-source GitLab command-line tool
+brew "glab"
+brew "gnupg"
+brew "go"
+brew "gobject-introspection"
+# HTTP/2 C Library
+brew "nghttp2"
+# Library access to GnuPG
+brew "gpgme"
+# Bash and Zsh completion for Gradle
+brew "gradle-completion"
+# Image manipulation
+brew "netpbm"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Framework for layout and rendering of i18n text
+brew "pango"
+brew "librsvg"
+brew "graphviz"
+# Improved top (interactive process viewer)
+brew "htop"
+brew "httpie"
+brew "hyperkit"
+# Regular expressions library
+brew "oniguruma"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+brew "zookeeper"
+brew "kafka"
+# Tool to move from `docker-compose` to Kubernetes
+brew "kompose"
+brew "krb5"
+brew "lazydocker"
+brew "lazygit"
+brew "less"
+brew "libxml2"
+brew "lima"
+brew "mackup"
+brew "mas"
+brew "maven"
+# Show markdown documents on text terminals
+brew "mdcat"
+brew "minikube"
+brew "moreutils"
+# Lightweight database library
+brew "tokyo-cabinet"
+# Mongrel of mail user agents (part elm, pine, mush, mh, etc.)
+brew "mutt"
+brew "mysql"
+# NCurses Disk Usage
+brew "ncdu"
+# Command-line collection runner for Postman
+brew "newman"
+brew "nmap"
+# Tools for one-time password authentication systems
+brew "oath-toolkit"
+# Open client for Cisco AnyConnect VPN
+brew "openconnect"
+brew "openldap"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Password manager
+brew "pass"
+# Draw UML diagrams
+brew "plantuml"
+brew "postgresql", restart_service: true
+brew "postgresql@13"
+brew "prometheus"
+brew "python@3.8"
+brew "ruby-build"
+brew "rbenv"
+brew "rcm"
+brew "redis"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Rootkit hunter
+brew "rkhunter"
+brew "rust"
+brew "s3cmd"
+brew "siege"
+brew "sonarqube"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
+# Tool to create intelligent and beautiful documentation
+brew "sphinx-doc"
+brew "ssh-copy-id", link: true
+# Feature-rich console based todo list manager
+brew "task"
+brew "telnet"
+brew "tidy-html5"
+brew "tig"
+brew "tldr"
+brew "tmux"
+# NetBSD's FTP client
+brew "tnftp"
+brew "vim"
+# Show the current WiFi network password
+brew "wifi-password"
+# Fetch summaries from MediaWiki wikis, like Wikipedia
+brew "wiki"
+brew "zsh"
+brew "zsh-syntax-highlighting"
+brew "zsh-you-should-use"
+cask "beyond-compare"
+cask "flux"
+cask "intellij-idea"
+cask "iterm2"
+cask "java"
+cask "java8"
+cask "keybase"
+cask "postman"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "quicklook-csv"
+cask "quicklook-json"
+cask "rectangle"
+cask "signal"
+cask "slack"
+cask "sourcetree"
+cask "spotify"
+# Quicklook extension for source files
+cask "syntax-highlight"
+cask "validator-sac"
+cask "visual-studio-code"
+cask "wireshark"
+mas "GarageBand", id: 682658836
+mas "ifolor Designer", id: 446366603
+mas "iMovie", id: 408981434
+mas "IP Scanner", id: 404167149
+mas "iPhoto", id: 408981381
+mas "Ka-Block!", id: 1335413823
+mas "Keynote", id: 409183694
+mas "Keys Multiplatform", id: 1494642810
+mas "Numbers", id: 409203825
+mas "OmniGraffle", id: 1142578753
+mas "Pages", id: 409201541
+mas "Pocket", id: 568494494
+mas "Spark", id: 1176895641
