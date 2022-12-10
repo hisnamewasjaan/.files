@@ -48,12 +48,13 @@ to see other option
 
 ## Todo
 
-- manage different git settings based on folder
-  - using dotenv for this
-- git settings in general
 - terminal setup, font, colors etc (in dotfiles?)
 - macos defaults
   - find new ones..
+
+## git
+
+- conditional gitconfig can be included using [includeIf](https://git-scm.com/docs/git-config#_conditional_includes)
 
 ## iTerm2
 

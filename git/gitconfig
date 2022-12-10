@@ -242,4 +242,7 @@
 [user]
 	name = Jan Bentzen
 	email = hisnamewasjaan@gmail.com
-# 	email = jbe@nine.dk
+
+[includeIf "gitdir:~/dev/erst/"]
+	# include work related config
+	path = .gitconfig-nine

@@ -11,6 +11,7 @@
     ~/.bashrc: bash/bashrc
     ~/.editorconfig: editorconfig
     ~/.gitconfig: git/gitconfig
+    ~/.gitconfig-nine: git/gitconfig-nine
     ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore
     ~/.tmux.conf: tmux.conf
