@@ -10,6 +10,7 @@ help: ## This help.
 
 
 # Run dotbot install script
+.PHONY: install
 install: ## Run dotbot install script
 	./install
 
@@ -28,5 +29,6 @@ brew-restore: ## Restore Homebrew packages
 	brew cleanup
 
 # Set MacOS defaults
+.PHONY: macos
 macos: ## Set MacOS defaults
 	./macos/set-defaults.sh
