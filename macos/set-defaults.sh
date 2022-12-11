@@ -63,25 +63,22 @@ echo "  › Always show scrollbars"
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
-echo "  › Disable Dashboard"
-defaults write com.apple.dashboard mcx-disabled -bool true
-
-echo "  › Don't automatically rearrange Spaces based on most recent use"
-defaults write com.apple.dock mru-spaces -bool false
+#echo "  › Don't automatically rearrange Spaces based on most recent use"
+#defaults write com.apple.dock mru-spaces -bool false
 
 echo "  › Increase the window resize speed for Cocoa applications"
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
-echo "  › Disable smart quotes and smart dashes as they're annoying when typing code"
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+#echo "  › Disable smart quotes and smart dashes as they're annoying when typing code"
+#defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+#defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-echo "  › Disable auto-correct"
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+#echo "  › Disable auto-correct"
+#defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-echo "  › Disable auto-capitalization and double-space period"
-defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -int 0
+#echo "  › Disable auto-capitalization and double-space period"
+#defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+#defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -int 0
 
 echo "  › Set up trackpad & mouse speed to a reasonable number"
 defaults write -g com.apple.trackpad.scaling 3
@@ -94,15 +91,24 @@ echo "  › Disable the 'Are you sure you want to open this application?' dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 echo "  › Show battery percent"
-defaults write com.apple.menuextra.battery ShowPercent -bool true
+# [old] defaults write com.apple.menuextra.battery ShowPercent -bool true
+defaults write com.apple.controlcenter.plist BatteryShowPercentage -bool true
 
 echo "  › Configure Menu Icons"
 defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
   "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-  "/System/Library/CoreServices/Menu Extras/Clock.menu" \
-  "/System/Library/CoreServices/Menu Extras/Volume.menu"
+  "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+# Bluetooth icon enabled use -int 24 to disable
+defaults write com.apple.controlcenter.plist Bluetooth -int 18
+
+# volume icon enabled use -int 24 to disable
+defaults write com.apple.controlcenter.plist Sound -int 18
+
+# wifi icon enabled use -int 24 to disable
+defaults -currentHost write  com.apple.controlcenter WiFi -int 18
+
 
 # if [ ! -z "$TRAVIS_JOB_ID" ]; then
 #   echo "  › Speed up wake from sleep to 24 hours from an hour"
@@ -156,6 +162,8 @@ echo "› Photos:"
 echo "  › Disable it from starting everytime a device is plugged in"
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
+#############################
+
 echo ""
 echo "› Dock"
 echo "  › Setting the icon size of Dock items to 48 pixels for optimal size/screen-realestate"
@@ -179,11 +187,24 @@ defaults write com.apple.dock launchanim -bool false
 echo "  › Show App Switcher on all displays"
 defaults write com.apple.dock appswitcher-all-displays -bool true
 
+#############################
+
+echo ""
+echo "› iTerm2:"
+echo "  › Specify the preferences directory"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iTerm/"
+echo "  › Tell iTerm2 to use the custom preferences in the directory"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+#echo "  › Don’t display the annoying prompt when quitting iTerm"
+# defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+#############################
+
 echo ""
 echo "› Kill related apps"
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-  "Terminal" "Transmission" "Photos"; do
+  "Terminal" "Transmission" "Photos" "iTerm2"; do
   killall "$app" > /dev/null 2>&1
 done
 set -e

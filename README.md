@@ -60,6 +60,13 @@ to see other option
 
 - color presets - Pastel (Dark background)
 - profile saved at iTerm/Default.json
+- [Sync iTerm2 Profile With Dotfiles Repository](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
+
+## macos defaults
+
+- [configuring_macos_big_sur_menu_bar_icons_using_dotfiles](https://sander.ginn.it/posts/configuring_macos_big_sur_menu_bar_icons_using_dotfiles/)
+- [executable_dot_macos_config](https://github.com/sanderginn/dotfiles/blob/main/executable_dot_macos_config)
+- [osx-for-hackers](https://www.dynamicguy.com/post/osx-for-hackers/)
 
 ## Other
 
