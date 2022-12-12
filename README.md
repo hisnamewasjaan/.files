@@ -68,6 +68,14 @@ to see other option
 - [executable_dot_macos_config](https://github.com/sanderginn/dotfiles/blob/main/executable_dot_macos_config)
 - [osx-for-hackers](https://www.dynamicguy.com/post/osx-for-hackers/)
 
+## Oh My Zsh
+
+- install powerlevel10k theme if needed
+
+```shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
 ## Other
 
 ZSH dotfiles load order:
