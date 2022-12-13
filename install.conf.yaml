@@ -16,7 +16,7 @@
     ~/.gitignore: git/gitignore
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
-    ~/.zprofile: zprofile
+    ~/.zprofile: zsh/zprofile
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/ohmyzsh
     ~/.p10k.zsh: zsh/p10k.zsh
