@@ -3,5 +3,7 @@ export PATH="$HOME/bin:$PATH";
 
 # init sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 # Set PATH, MANPATH, etc., for Homebrew.
-eval "$(brew --prefix)/bin/brew shellenv"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(brew shellenv)"
