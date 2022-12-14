@@ -28,6 +28,11 @@ brew-restore: ## Restore Homebrew packages
 	brew bundle install --file=macos/Brewfile
 	brew cleanup
 
+# Uninstall all dependencies not listed from the Brewfile.
+brew-bundle-cleanup: ## Uninstall all dependencies not listed from the Brewfile.
+	brew bundle cleanup --file=macos/Brewfile
+	brew cleanup
+
 # Set MacOS defaults
 .PHONY: macos
 macos: ## Set MacOS defaults
