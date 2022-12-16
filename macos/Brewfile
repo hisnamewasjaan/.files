@@ -17,6 +17,8 @@ brew "tldr"
 brew "vim"
 # Show the current WiFi network password
 brew "wifi-password"
+# App to build and share containerized applications and microservices
+cask "docker"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # JetBrains tools manager
