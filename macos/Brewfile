@@ -3,6 +3,8 @@ tap "homebrew/cask"
 tap "homebrew/core"
 # Distributed revision control system
 brew "git"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
 # Improved top (interactive process viewer)
 brew "htop"
 # Mac App Store command-line interface
@@ -19,6 +21,9 @@ brew "vim"
 brew "wifi-password"
 # App to build and share containerized applications and microservices
 cask "docker"
+cask "dropbox"
+# Web browser
+cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # JetBrains tools manager
