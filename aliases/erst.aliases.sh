@@ -23,3 +23,10 @@ alias smbkompensation='/usr/bin/osascript -e "try" -e "mount volume \"smb://smb_
 
 alias nin_jbe@dev.erst.dk='security find-internet-password -a nin_jbe -s dev.erst.dk -g'
 alias nin_jbe@dev.erst.dk='security find-internet-password -a nin_jbe -g'
+
+
+alias komp_erduoppe_overblik='http https://erst.virk.dk/kompensationsmodul/erduoppe/overblik'
+alias komp_erduoppe_overblik_p05="http 'https://erst.virk.dk/kompensationsmodul/erduoppe/overblik?jsessionid=.kompensationsmodul-es-s-app-p05'"
+alias komp_erduoppe_overblik_p06="http 'https://erst.virk.dk/kompensationsmodul/erduoppe/overblik?jsessionid=.kompensationsmodul-es-s-app-p06'"
+
+alias komp_erduoppe_false="http https://erst.virk.dk/kompensationsmodul/erduoppe/overblik | json_pp | rg 'available\" : false' -A6"
