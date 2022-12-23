@@ -15,3 +15,4 @@ alias gctc='./gradlew clean test codenarcAll'
 alias gt='./gradlew test'
 
 alias gr5="./gradlew -g ~/.gradle5"
+alias gr5k='gr5 --console verbose -PtestloggerQuiet=true'
