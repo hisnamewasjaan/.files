@@ -156,7 +156,10 @@ alias ncal='ncal -yw'
 # Pipe jbe@nineconsult public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
-alias rg="rg -iz"
+alias rg="rg  --ignore-case --search-zip"
+
+# enable pcre2 for lookaround and backrefs <https://www.pcre.org>
+alias rgl="rg  --pcre2 --search-zip"
 
 # monitoring
 

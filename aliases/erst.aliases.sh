@@ -30,3 +30,5 @@ alias komp_erduoppe_overblik_p05="http 'https://erst.virk.dk/kompensationsmodul/
 alias komp_erduoppe_overblik_p06="http 'https://erst.virk.dk/kompensationsmodul/erduoppe/overblik?jsessionid=.kompensationsmodul-es-s-app-p06'"
 
 alias komp_erduoppe_false="http https://erst.virk.dk/kompensationsmodul/erduoppe/overblik | json_pp | rg 'available\" : false' -A6"
+
+alias flogerror="rgl '] ERROR (?!.*(Klientinformation))' prod-app-p06/kompensationsmodul.log -A 30"
