@@ -85,6 +85,7 @@ plugins=(
 #   git-prompt
 #   gitfast
 #   github
+  docker
   dotenv
   isodate
 #   iterm2
