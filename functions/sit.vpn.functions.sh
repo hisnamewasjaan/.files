@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
 
 function vpnup() {
+    local host="${1:-ext3.statens-it.dk}"
+
     if [ -f "$HOME/.openconnect.pid" ]; then
         echo "openconnect pid file already exists, probably running"
     else
         sudo /bin/stty -tostop && \
-        echo -e "$(cat ~/.sit/password.txt)\n$(cat ~/.sit/totp-secret.txt | xargs oathtool --totp -b)" | sudo /usr/local/sbin/openconnect ext2.statens-it.dk -b --pid-file="$HOME/.openconnect.pid" --local-id=device_uniqueid=$(cat ~/.sit/udid.txt) -u X020997 --passwd-on-stdin
+        echo -e "$(cat ~/.sit/password.txt)\n$(cat ~/.sit/totp-secret.txt | xargs oathtool --totp -b)" | \
+          sudo /usr/local/sbin/openconnect "$host" \
+            -b \
+            --pid-file="$HOME/.openconnect.pid" \
+            --local-id=device_uniqueid=$(cat ~/.sit/udid.txt) \
+            -u X020997 \
+            --passwd-on-stdin
     fi
 }
 #--reconnect-timeout
@@ -19,6 +27,13 @@ function vpnstop() {
 }
 
 function vpnchallenge() {
+    local host="${1:-ext3.statens-it.dk}"
 
-    echo -e "$(cat ~/.sit/password.txt)\n$(cat ~/.sit/totp-secret.txt | xargs oathtool --totp -b)" | sudo /usr/local/sbin/openconnect ext2.statens-it.dk -b --pid-file="$HOME/.openconnect.pid" --local-id=device_uniqueid=$(cat ~/.sit/udid.txt) -u X020997 --passwd-on-stdin
+    echo -e "$(cat ~/.sit/password.txt)\n$(cat ~/.sit/totp-secret.txt | xargs oathtool --totp -b)" | \
+      sudo /usr/local/sbin/openconnect "$host" \
+        -b \
+        --pid-file="$HOME/.openconnect.pid" \
+        --local-id=device_uniqueid=$(cat ~/.sit/udid.txt) \
+        -u X020997 \
+        --passwd-on-stdin
 }
