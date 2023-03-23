@@ -11,6 +11,8 @@ brew "graphviz"
 brew "htop"
 # Mac App Store command-line interface
 brew "mas"
+# Tools for one-time password authentication systems
+brew "oath-toolkit"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # Search tool like grep and The Silver Searcher
