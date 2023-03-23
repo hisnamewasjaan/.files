@@ -11,6 +11,8 @@ brew "graphviz"
 brew "htop"
 # Mac App Store command-line interface
 brew "mas"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Text interface for Git repositories
@@ -21,8 +23,11 @@ brew "tldr"
 brew "vim"
 # Show the current WiFi network password
 brew "wifi-password"
+# General-purpose lossless data-compression library
+brew "zlib"
 # App to build and share containerized applications and microservices
 cask "docker"
+# Client for the Dropbox cloud storage service
 cask "dropbox"
 # Web browser
 cask "google-chrome"
