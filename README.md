@@ -38,19 +38,12 @@ make
 ```
 to see other option
 
-## Contributing
-
-## History
-
-## Credits
-
-## Licence
-
 ## Todo
 
 - terminal setup, font, colors etc (in dotfiles?)
 - macos defaults
   - find new ones..
+- [iTerm shell integration](https://iterm2.com/documentation-shell-integration.html)
 
 ## git
 
@@ -59,7 +52,7 @@ to see other option
 ## iTerm2
 
 - color presets - Pastel (Dark background)
-- profile saved at iTerm/Default.json
+- profile saved at [iTerm/Default.json](iTerm/Default.json)
 - [Sync iTerm2 Profile With Dotfiles Repository](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 
 ## macos defaults

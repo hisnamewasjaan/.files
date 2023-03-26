@@ -195,7 +195,7 @@ defaults write com.apple.dock appswitcher-all-displays -bool true
 echo ""
 echo "› iTerm2:"
 echo "  › Specify the preferences directory"
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iTerm/"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm/"
 echo "  › Tell iTerm2 to use the custom preferences in the directory"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 #echo "  › Don’t display the annoying prompt when quitting iTerm"

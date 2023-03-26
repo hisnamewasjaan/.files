@@ -1099,7 +1099,7 @@
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>4</integer>
 	<key>TabViewType</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>TerminalVMargin</key>
 	<integer>3</integer>
 	<key>UseBorder</key>
