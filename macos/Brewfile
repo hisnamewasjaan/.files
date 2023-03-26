@@ -29,6 +29,8 @@ brew "vim"
 brew "wego"
 # Show the current WiFi network password
 brew "wifi-password"
+# Copy terminal output to clipboard
+brew "yank"
 # General-purpose lossless data-compression library
 brew "zlib"
 # App to build and share containerized applications and microservices
