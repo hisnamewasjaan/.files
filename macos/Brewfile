@@ -21,6 +21,8 @@ brew "ripgrep"
 brew "tig"
 # Simplified and community-driven man pages
 brew "tldr"
+# Program that allows you to count code, quickly
+brew "tokei"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Show the current WiFi network password
