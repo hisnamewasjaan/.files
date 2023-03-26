@@ -25,6 +25,8 @@ brew "tldr"
 brew "tokei"
 # Vi 'workalike' with many additional features
 brew "vim"
+# Weather app for the terminal
+brew "wego"
 # Show the current WiFi network password
 brew "wifi-password"
 # General-purpose lossless data-compression library
