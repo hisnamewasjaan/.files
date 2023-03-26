@@ -33,6 +33,11 @@ brew-bundle-cleanup: ## Uninstall all dependencies not listed from the Brewfile.
 	brew bundle cleanup --file=macos/Brewfile
 	brew cleanup
 
+# Set MacOS hostname and computername
+.PHONY: macos-hostname
+macos-hostname: ## Set MacOS hostame, localhostname and computername
+	./macos/set-hostname.sh
+
 # Set MacOS defaults
 .PHONY: macos
 macos: ## Set MacOS defaults

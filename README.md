@@ -60,6 +60,8 @@ to see other option
 - [configuring_macos_big_sur_menu_bar_icons_using_dotfiles](https://sander.ginn.it/posts/configuring_macos_big_sur_menu_bar_icons_using_dotfiles/)
 - [executable_dot_macos_config](https://github.com/sanderginn/dotfiles/blob/main/executable_dot_macos_config)
 - [osx-for-hackers](https://www.dynamicguy.com/post/osx-for-hackers/)
+- [https://macos-defaults.com/](https://macos-defaults.com/)
+- [awesome-macos-command-line](https://git.herrbischoff.com/awesome-macos-command-line/about/)
 
 ## Oh My Zsh
 
