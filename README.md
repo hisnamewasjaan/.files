@@ -40,10 +40,8 @@ to see other option
 
 ## Todo
 
-- terminal setup, font, colors etc (in dotfiles?)
-- macos defaults
-  - find new ones..
 - [iTerm shell integration](https://iterm2.com/documentation-shell-integration.html)
+- [awesome-command-line-apps](https://git.herrbischoff.com/awesome-command-line-apps/about/)
 
 ## git
 
@@ -62,15 +60,21 @@ to see other option
 - [osx-for-hackers](https://www.dynamicguy.com/post/osx-for-hackers/)
 - [https://macos-defaults.com/](https://macos-defaults.com/)
 - [awesome-macos-command-line](https://git.herrbischoff.com/awesome-macos-command-line/about/)
+-
 
 ## Oh My Zsh
 
-- install powerlevel10k theme if needed
+- install [powerlevel10k](https://github.com/romkatv/powerlevel10k) theme if needed
 
 ```shell
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
+## Manual settings
+System preferences
+
+- Disable 'Close windows when quitting an application'
+-
 ## Other
 
 ZSH dotfiles load order:
