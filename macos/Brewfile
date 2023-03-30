@@ -1,6 +1,8 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
 # Distributed revision control system
 brew "git"
 # Small git utilities
@@ -43,8 +45,12 @@ cask "google-chrome"
 cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Team communication and collaboration software
+cask "slack"
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
