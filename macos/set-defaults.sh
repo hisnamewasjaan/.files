@@ -31,6 +31,11 @@ echo "› System:"
 echo "  › Disable press-and-hold for keys in favor of key repeat"
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+echo "  › Enable firewall"
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+
+
+
 echo "  › Show the ~/Library folder"
 chflags nohidden ~/Library
 
