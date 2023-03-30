@@ -40,5 +40,6 @@ macos-hostname: ## Set MacOS hostame, localhostname and computername
 
 # Set MacOS defaults
 .PHONY: macos
-macos: ## Set MacOS defaults
+macos: ## Set MacOS defaults etc
 	./macos/set-defaults.sh
+	./macos/disable-manpage-shortcut.sh
