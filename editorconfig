@@ -12,12 +12,15 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 # 4 space indentation
-[{*.java,*.groovy,*.gradle}]
+[*.{java,groovy,gradle,kt,xml}]
 indent_style = space
 indent_size = 4
 continuation_indent_size = 8
 
 # 2 space indentation
-[{*.exs,*.json}]
+[*.{.exs,json,yml,yaml,ts}]
 indent_style = space
 indent_size = 2
+
+[Makefile]
+indent_style = tab
