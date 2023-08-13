@@ -15,7 +15,10 @@
     ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore
     ~/.tmux.conf: tmux.conf
-    ~/.vimrc: vimrc
+    ~/.vim/backups: vim/backups
+    ~/.vim/swaps: vim/swaps
+    ~/.vim/undo: vim/undo
+    ~/.vim/vimrc: vim/vimrc
     ~/.zshenv: zsh/zshenv
     ~/.zprofile: zsh/zprofile
     ~/.zshrc: zsh/zshrc
