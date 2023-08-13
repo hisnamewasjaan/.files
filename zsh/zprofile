@@ -7,3 +7,6 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 # Set PATH, MANPATH, etc., for Homebrew.
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(brew shellenv)"
+
+# vi-mode settings
+VI_MODE_SET_CURSOR=true
