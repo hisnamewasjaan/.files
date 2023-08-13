@@ -6,7 +6,7 @@ root = true
 # Unix-style newlines with a newline ending every file
 [*]
 charset = utf-8
-indent_style = tab
+indent_style = space
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
@@ -18,7 +18,7 @@ indent_size = 4
 continuation_indent_size = 8
 
 # 2 space indentation
-[*.{.exs,json,yml,yaml,ts}]
+[*.{exs,json,yml,yaml,ts}]
 indent_style = space
 indent_size = 2
 
