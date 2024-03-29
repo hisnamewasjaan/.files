@@ -53,14 +53,14 @@ to see other option
 - profile saved at [iTerm/Default.json](iTerm/Default.json)
 - [Sync iTerm2 Profile With Dotfiles Repository](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 
-## macos defaults
+## macos defaults and cli tools
 
 - [configuring_macos_big_sur_menu_bar_icons_using_dotfiles](https://sander.ginn.it/posts/configuring_macos_big_sur_menu_bar_icons_using_dotfiles/)
 - [executable_dot_macos_config](https://github.com/sanderginn/dotfiles/blob/main/executable_dot_macos_config)
 - [osx-for-hackers](https://www.dynamicguy.com/post/osx-for-hackers/)
 - [https://macos-defaults.com/](https://macos-defaults.com/)
 - [awesome-macos-command-line](https://git.herrbischoff.com/awesome-macos-command-line/about/)
--
+- [An A-Z Index of the Apple macOS command line (macOS bash)](https://ss64.com/mac/)
 
 ## Oh My Zsh
 
