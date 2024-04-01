@@ -185,3 +185,9 @@ function base64decode {
   else _s="$1" ; fi
   echo "$_s" | tr '_-' '/+' | openssl enc -d -a -A
 }
+
+# run a command in every immediate subdirectory
+# runCommand "git standup"
+function runCommand() {
+    for d in ./*/ ; do /bin/zsh -c "(cd "$d" && "$@")"; done
+}
