@@ -3,6 +3,8 @@ tap "homebrew/cask"
 tap "homebrew/core"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Disk Usage/Free Utility - a better 'df' alternative https://github.com/muesli/duf
+brew "duf"
 # Distributed revision control system
 brew "git"
 # Small git utilities
@@ -25,6 +27,8 @@ brew "tig"
 brew "tldr"
 # Program that allows you to count code, quickly
 brew "tokei"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Weather app for the terminal
