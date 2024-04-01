@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# regarding error on start
+# https://gitlab.com/openconnect/vpnc-scripts/-/issues/45
 function vpnup() {
     readonly vpnhost=${1:-"ext3"}
 
