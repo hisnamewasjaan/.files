@@ -43,6 +43,8 @@ brew "zlib"
 # App to build and share containerized applications and microservices
 # Simple TOTP CLI, powered by keychain of macOS
 brew "simnalamburt/x/totp"
+# Compare files and folders
+cask "beyond-compare"
 cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
