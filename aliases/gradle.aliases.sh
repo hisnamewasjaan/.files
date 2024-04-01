@@ -14,5 +14,5 @@ alias gcccg='./gradlew clean check -DENABLE_CLOVER=true -Dtest.enableGebTest=tru
 alias gctc='./gradlew clean test codenarcAll'
 alias gt='./gradlew test'
 
-alias gr5="./gradlew -g ~/.gradle5"
-alias gr5k='gr5 --console verbose -PtestloggerQuiet=true'
+alias gr5="./gradlew -g ~/.gradle5 --console verbose"
+alias gr5k='gr5 -PtestloggerQuiet=true'
