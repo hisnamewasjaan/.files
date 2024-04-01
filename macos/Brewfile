@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "simnalamburt/x"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # Disk Usage/Free Utility - a better 'df' alternative https://github.com/muesli/duf
@@ -40,6 +41,8 @@ brew "yank"
 # General-purpose lossless data-compression library
 brew "zlib"
 # App to build and share containerized applications and microservices
+# Simple TOTP CLI, powered by keychain of macOS
+brew "simnalamburt/x/totp"
 cask "docker"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
