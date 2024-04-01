@@ -32,3 +32,8 @@ alias komp_erduoppe_overblik_p06="http 'https://erst.virk.dk/kompensationsmodul/
 alias komp_erduoppe_false="http https://erst.virk.dk/kompensationsmodul/erduoppe/overblik | json_pp | rg 'available\" : false' -A6"
 
 alias flogerror="rgl '] ERROR (?!.*(Klientinformation))' prod-app-p06/kompensationsmodul.log -A 30"
+
+
+# gitlab cli: https://gitlab.com/gitlab-org/cli
+# clone every repo in a group/project
+alias klon_kerne='glab repo clone --group kerne --paginate'
