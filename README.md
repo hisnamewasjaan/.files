@@ -60,6 +60,7 @@ to see other option
 - [osx-for-hackers](https://www.dynamicguy.com/post/osx-for-hackers/)
 - [https://macos-defaults.com/](https://macos-defaults.com/)
 - [awesome-macos-command-line](https://git.herrbischoff.com/awesome-macos-command-line/about/)
+- [learn-anything/command-line-tools](https://github.com/learn-anything/command-line-tools)
 - [An A-Z Index of the Apple macOS command line (macOS bash)](https://ss64.com/mac/)
 
 ## Oh My Zsh
