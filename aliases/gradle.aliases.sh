@@ -6,6 +6,7 @@ alias gcr='./grailsw clean-all && ./grailsw compile && ./grailsw run-app'
 
 # run gradle wrapper verbose
 alias gw="./gradlew --console=verbose"
+alias gw3="./gradlew -g ~/.gradle-grails3"
 
 # gradle clean, check
 alias gcc='./gradlew clean check'
