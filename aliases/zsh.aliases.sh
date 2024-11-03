@@ -16,7 +16,6 @@ alias d="cd ~/dev"
 alias g="git"
 alias gmr='git push --push-option merge_request.create --push-option merge_request.remove_source_branch'
 alias gtl='git tag --list --sort=-creatordate'
-alias mr='lab mr --open --remove_source_branch'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
