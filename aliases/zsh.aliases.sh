@@ -175,3 +175,6 @@ alias monit='monit'
 
 alias hisnamewasjaan='security find-generic-password -a hisnamewasjaan@gmail.com -s "Apple ID Authentication" -g'
 alias wifi="security find-generic-password -ga 'tø nest'"
+
+# System software overview
+alias sysinfo='system_profiler SPSoftwareDataType'
