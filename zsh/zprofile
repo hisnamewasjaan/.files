@@ -1,6 +1,9 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
+# Add `.` to the `$PATH`
+export PATH=".:$PATH";
+
 # init sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
