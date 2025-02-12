@@ -17,3 +17,7 @@ alias nin_jbe@dev.erst.dk='security find-internet-password -a nin_jbe -g'
 alias ssh_dokumentlager_dev='ssh erst-infd-app01'
 alias ssh_sagslager_dev='ssh erst-infd-app03'
 alias ssh_sagsindeks_dev='ssh erst-infd-app05'
+alias ssh_sagjournalisering_dev='ssh erst-infd-app31'
+
+# hent X-nummer password (til SIT og ERST)
+alias xpassword='security find-generic-password -w -a "X020997"'
