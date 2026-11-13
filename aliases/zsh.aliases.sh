@@ -178,3 +178,9 @@ alias wifi="security find-generic-password -ga 'tø nest'"
 
 # System software overview
 alias sysinfo='system_profiler SPSoftwareDataType'
+
+# Ignore case distinctions in the supplied pattern, match against full argument lists, long output
+alias pgrep='pgrep -ilf'
+
+# Ignore case distinctions in the supplied pattern, match against full argument lists, long output
+alias pkill='pkill -ilf'
