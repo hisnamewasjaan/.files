@@ -69,7 +69,7 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Show active network interfaces
-alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+alias ifactive="ifconfig | awk '/^[^[:space:]]/ { if (block ~ /status: active/) printf \"%s\", block; block = \"\" } { block = block \$0 \"\n\" } END { if (block ~ /status: active/) printf \"%s\", block }'"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
@@ -102,7 +102,7 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # URL-encode strings
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
 
 # Merge PDF files
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
@@ -116,8 +116,8 @@ alias spoton="sudo mdutil -a -i on"
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
-# Airport CLI alias
-alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+# Wi-Fi diagnostics (replaces the `airport` CLI removed in macOS 14.4)
+alias wifiinfo='sudo wdutil info'
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
@@ -162,15 +162,6 @@ alias rg="rg  --ignore-case --search-zip"
 
 # enable pcre2 for lookaround and backrefs <https://www.pcre.org>
 alias rgl="rg  --pcre2 --search-zip"
-
-# monitoring
-
-# interactive process viewer
-# interactive search using /
-alias htop='htop'
-
-# not installed
-alias monit='monit'
 
 
 alias hisnamewasjaan='security find-generic-password -a hisnamewasjaan@gmail.com -s "Apple ID Authentication" -g'
