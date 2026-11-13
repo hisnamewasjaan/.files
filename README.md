@@ -92,10 +92,11 @@ to see other option
 
 ## Oh My Zsh
 
-- install [powerlevel10k](https://github.com/romkatv/powerlevel10k) theme if needed
+- [powerlevel10k](https://github.com/romkatv/powerlevel10k) theme is kept as a git submodule in [zsh/powerlevel10k](zsh/powerlevel10k) and sourced from [zshrc](zsh/zshrc)
+- update the submodules to their latest upstream versions
 
 ```shell
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git submodule update --remote zsh/ohmyzsh zsh/powerlevel10k
 ```
 
 ## Manual settings

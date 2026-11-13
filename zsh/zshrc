@@ -17,7 +17,8 @@ export ZSH="$DOTFILES/zsh/ohmyzsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Empty, as powerlevel10k is loaded from its own submodule further down
+ZSH_THEME=""
 # ZSH_THEME=random
 
 # Set list of themes to pick from when loading at random
@@ -138,6 +139,9 @@ for f in $DOTFILES/functions/*; do source $f; done
 
 # Load aliases
 for f in $DOTFILES/aliases/*.aliases.*sh; do source $f; done
+
+# Load powerlevel10k theme (git submodule)
+source $DOTFILES/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
