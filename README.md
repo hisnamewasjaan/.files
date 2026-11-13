@@ -50,7 +50,8 @@ to see other option
 ## iTerm2
 
 - color presets - Pastel (Dark background)
-- profile saved at [iTerm/Default.json](iTerm/Default.json)
+- preferences saved at [iTerm/com.googlecode.iterm2.plist](iTerm/com.googlecode.iterm2.plist), linked to `~/.iterm/` by [install.conf.yaml](install.conf.yaml)
+- exported profile at [iTerm/Default.json](iTerm/Default.json)
 - [Sync iTerm2 Profile With Dotfiles Repository](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 
 ## macos defaults and cli tools
@@ -75,8 +76,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 System preferences
 
 - Disable 'Close windows when quitting an application'
--
-## Other
 
-ZSH dotfiles load order:
-.zshenv → .zprofile → .zshrc → .zlogin → .zlogout
+## Zsh load order
+
+`.zshenv` → `.zprofile` → `.zshrc` → `.zlogin` → `.zlogout`
