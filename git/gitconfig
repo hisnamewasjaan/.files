@@ -134,6 +134,16 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
+	# Use delta for syntax-highlighted, side-by-side capable diffs
+	# https://dandavison.github.io/delta/
+	pager = delta
+
+[delta]
+
+	# Use n and N to move between diff sections
+	navigate = true
+	line-numbers = true
+
 [color]
 
 	# Use colors in Git commands that are capable of colored output when
@@ -169,6 +179,12 @@
 	# Detect copies as well as renames
 	renames = copies
 
+	# Produce more readable diffs than the default `myers` algorithm
+	algorithm = histogram
+
+	# Show moved lines in a different color than added/removed lines
+	colorMoved = default
+
 [diff "bin"]
 
 	# Use `hexdump` to diff binary files
@@ -176,13 +192,20 @@
 
 [help]
 
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
+	# Suggest a correction for mistyped commands and ask before running it
+	autocorrect = prompt
+
+[init]
+
+	defaultBranch = main
 
 [merge]
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+
+	# Show the common ancestor in conflicts, and leave out lines that match on both sides
+	conflictStyle = zdiff3
 
 [fetch]
 	prune = true
@@ -232,11 +255,16 @@
 [interactive]
 	# allow the user to provide one-letter input with a single key (i.e., without hitting enter). Currently this is used by the --patch mode of  git-add(1),  git-checkout(1), git-commit(1), git-reset(1), and git-stash(1).
 	singleKey = true
+	# Use delta to highlight hunks in `git add --patch` and friends
+	diffFilter = delta --color-only
 
 [rerere]
 	enabled = true
 	# Reuse recorded resolution of conflicted merges
 	# see `man git-rerere'
+	# Stage files that rerere resolved automatically
+	autoupdate = true
+
 [user]
 	name = Jan Bentzen
 	email = hisnamewasjaan@gmail.com
