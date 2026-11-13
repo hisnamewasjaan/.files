@@ -191,3 +191,11 @@ function base64decode {
 function runCommand() {
     for d in ./*/ ; do /bin/zsh -c "(cd "$d" && "$@")"; done
 }
+
+# Merge PDF files (requires `qpdf`)
+# Usage: `mergepdf output.pdf input{1,2,3}.pdf`
+function mergepdf() {
+	local output="$1";
+	shift;
+	qpdf --empty --pages "$@" -- "${output}";
+}

@@ -53,6 +53,8 @@ brew "openssl@3"
 brew "perl"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.15"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Text interface for Git repositories
