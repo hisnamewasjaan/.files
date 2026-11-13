@@ -20,6 +20,8 @@ brew "mas"
 brew "oath-toolkit"
 # Manage compile and link flags for libraries
 brew "pkg-config"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.15"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Text interface for Git repositories
