@@ -26,4 +26,4 @@
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.sdkman/etc/config: sdkman/config
     ~/.config/htop/htoprc: htop/htoprc
-    ~/.iterm/com.googlecode.iterm2.plist: iterm/com.googlecode.iterm2.plist
+    ~/.iterm/com.googlecode.iterm2.plist: iTerm/com.googlecode.iterm2.plist
