@@ -21,9 +21,14 @@ git submodule update
 Adjust [zshrc](zsh/zshrc) to your liking. Theme, plugins etc
 
 
+Requires [Homebrew](https://brew.sh). Installs the packages the dotfiles depend on ([macos/Brewfile.essentials](macos/Brewfile.essentials)) and links the dotfiles with dotbot.
+Run it again after pulling changes.
+
 ```
-./install
+make install
 ```
+
+The full set of apps and tools is restored separately with `make brew-restore`.
 
 ## Usage
 

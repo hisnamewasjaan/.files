@@ -9,10 +9,16 @@ help: ## This help.
 .DEFAULT_GOAL := help
 
 
-# Run dotbot install script
+# Install the Homebrew packages the dotfiles depend on, then run dotbot install script
 .PHONY: install
-install: ## Run dotbot install script
+install: essentials ## Install essential Homebrew packages and run dotbot install script
 	./install
+
+# Install the Homebrew packages the dotfiles depend on (starship, delta, Nerd Font, ...)
+.PHONY: essentials
+essentials: ## Install essential Homebrew packages from macos/Brewfile.essentials
+	@command -v brew > /dev/null || { echo "Homebrew is required, see https://brew.sh"; exit 1; }
+	brew bundle install --no-upgrade --file=macos/Brewfile.essentials
 
 # Save snapshot of all Homebrew packages to macos/Brewfile
 brew: ## Save snapshot of all Homebrew packages to macos/Brewfile

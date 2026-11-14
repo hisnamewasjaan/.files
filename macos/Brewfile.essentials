@@ -1,0 +1,13 @@
+# Packages the dotfiles themselves depend on, installed by `make install`.
+# Everything else lives in the full Brewfile, restored with `make brew-restore`.
+
+# Small git utilities (completion sourced in zsh/zshrc)
+brew "git-extras"
+# Syntax-highlighting pager for git and diff output (core.pager in git/gitconfig)
+brew "git-delta"
+# Cross-shell prompt for astronauts (initialized in zsh/zshrc)
+brew "starship"
+# Display directories as trees (`tre` in functions/functions.sh)
+brew "tree"
+# JetBrainsMono Nerd Font families (icons in starship/starship.toml, used by iTerm2)
+cask "font-jetbrains-mono-nerd-font"
