@@ -83,6 +83,8 @@ cask "claude-code"
 cask "docker-desktop"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
+# JetBrainsMono Nerd Font families (JetBrains Mono)
+cask "font-jetbrains-mono-nerd-font"
 # Web browser
 cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
