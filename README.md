@@ -48,7 +48,6 @@ to see other option
 
 ## Todo
 
-- [iTerm shell integration](https://iterm2.com/documentation-shell-integration.html)
 - SSH keys and commit signing via [1Password](https://developer.1password.com/docs/ssh/)
   - replace the RSA keys (`id_rsa`, `hisnamewasjaan_id_rsa`) with an Ed25519 key stored in 1Password
   - use the 1Password SSH agent in `~/.ssh/config`, so no private key files are kept on disk
@@ -94,6 +93,9 @@ to see other option
 - [https://macos-defaults.com/](https://macos-defaults.com/)
 - [awesome-macos-command-line](https://git.herrbischoff.com/awesome-macos-command-line/about/)
 - [awesome-command-line-apps](https://git.herrbischoff.com/awesome-command-line-apps/about/)
+- [eza](https://github.com/eza-community/eza) - modern `ls`
+- [fd](https://github.com/sharkdp/fd) - simpler, faster `find`
+- [lazygit](https://github.com/jesseduffield/lazygit) - terminal UI for git
 - [learn-anything/command-line-tools](https://github.com/learn-anything/command-line-tools)
 - [An A-Z Index of the Apple macOS command line (macOS bash)](https://ss64.com/mac/)
 
