@@ -10,7 +10,7 @@ function targz() {
 	local tmpFile="${@%/}.tar";
 	tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
 
-	size=$(
+	local size=$(
 		stat -f"%z" "${tmpFile}" 2> /dev/null; # macOS `stat`
 		stat -c"%s" "${tmpFile}" 2> /dev/null;  # GNU `stat`
 	);
@@ -31,26 +31,12 @@ function targz() {
 	"${cmd}" -v "${tmpFile}" || return 1;
 	[ -f "${tmpFile}" ] && rm "${tmpFile}";
 
-	zippedSize=$(
+	local zippedSize=$(
 		stat -f"%z" "${tmpFile}.gz" 2> /dev/null; # macOS `stat`
 		stat -c"%s" "${tmpFile}.gz" 2> /dev/null; # GNU `stat`
 	);
 
 	echo "${tmpFile}.gz ($((zippedSize / 1000)) kB) created successfully.";
-}
-
-# Determine size of a file or total size of a directory
-function fs() {
-	if du -b /dev/null > /dev/null 2>&1; then
-		local arg=-sbh;
-	else
-		local arg=-sh;
-	fi
-	if [[ -n "$@" ]]; then
-		du $arg -- "$@";
-	else
-		du $arg .[^.]* ./*;
-	fi;
 }
 
 # Use Git’s colored diff when available
@@ -70,16 +56,6 @@ function dataurl() {
 	echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
 }
 
-# Start an HTTP server from a directory, optionally specifying the port
-function server() {
-	local port="${1:-8000}";
-	sleep 1 && open "http://localhost:${port}/" &
-	# Set the default Content-Type to `text/plain` instead of `application/octet-stream`
-	# And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
-	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
-}
-
-
 # Compare original and gzipped file size
 function gz() {
 	local origsize=$(wc -c < "$1");
@@ -89,9 +65,12 @@ function gz() {
 	printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
 }
 
-# Run `dig` and display the most useful info
+# Run `dig` and display the most useful records
 function digga() {
-	dig +nocmd "$1" any +multiline +noall +answer;
+    local type;
+    for type in A AAAA CNAME MX NS TXT; do
+        dig +nocmd "$1" "${type}" +noall +answer;
+    done;
 }
 
 # Show all the names (CNs and SANs) listed in the SSL certificate
@@ -128,27 +107,6 @@ function getcertnames() {
 	fi;
 }
 
-# Normalize `open` across Linux, macOS, and Windows.
-# This is needed to make the `o` function (see below) cross-platform.
-if [ ! $(uname -s) = 'Darwin' ]; then
-	if grep -q Microsoft /proc/version; then
-		# Ubuntu on Windows using the Linux subsystem
-		alias open='explorer.exe';
-	else
-		alias open='xdg-open';
-	fi
-fi
-
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
-function o() {
-	if [ $# -eq 0 ]; then
-		open .;
-	else
-		open "$@";
-	fi;
-}
-
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
@@ -156,18 +114,6 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
-
-# google search
-function google {
-	open "http://google.com/search?q=$1"
-}
-
-
-# Open man page as PDF
-function manpdf() {
- man -t "${1}" | open -f -a /Applications/Preview.app/
-}
-
 
 # base64 encode
 # Encode to / decode from Base64-URL without padding.
@@ -179,17 +125,12 @@ function base64encode {
 # base64 decode
 # Encode to / decode from Base64-URL without padding.
 function base64decode {
+  local _l _s
   _l=$((${#1} % 4))
   if [ $_l -eq 2 ]; then _s="$1"'=='
   elif [ $_l -eq 3 ]; then _s="$1"'='
   else _s="$1" ; fi
   echo "$_s" | tr '_-' '/+' | openssl enc -d -a -A
-}
-
-# run a command in every immediate subdirectory
-# runCommand "git standup"
-function runCommand() {
-    for d in ./*/ ; do /bin/zsh -c "(cd "$d" && "$@")"; done
 }
 
 # Merge PDF files (requires `qpdf`)
