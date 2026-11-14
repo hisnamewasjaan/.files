@@ -24,5 +24,7 @@
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/ohmyzsh
     ~/.config/starship.toml: starship/starship.toml
+    ~/.claude/CLAUDE.md: claude/CLAUDE.md
+    ~/.claude/statusline-command.sh: claude/statusline-command.sh
     ~/.sdkman/etc/config: sdkman/config
     ~/.config/htop/htoprc: htop/htoprc

@@ -109,6 +109,12 @@ git submodule update --remote zsh/ohmyzsh
 - config in [starship/starship.toml](starship/starship.toml), based on the [nerd-font-symbols](https://starship.rs/presets/nerd-font-symbols) preset, linked to `~/.config/starship.toml`
 - requires a [Nerd Font](https://www.nerdfonts.com/) in the terminal - JetBrains Mono Nerd Font is installed via the Brewfile and used by iTerm2
 
+## Claude Code and other AI tools
+
+- [AGENTS.md](AGENTS.md) describes this repo for AI coding tools; [CLAUDE.md](CLAUDE.md) imports it for Claude Code
+- global Claude Code instructions and status line in [claude/](claude/), linked to `~/.claude/` by [install.conf.yaml](install.conf.yaml)
+- `~/.claude/settings.json` is not managed here, as iTerm2's Claude Code integration writes hooks with absolute paths into it
+
 ## Manual settings
 System preferences
 
