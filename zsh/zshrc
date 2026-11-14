@@ -74,15 +74,17 @@ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "apple" "af-magic" "bira
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# git, docker and isodate removed: their aliases were unused, and docker
+# completion comes from Docker Desktop via Homebrew's site-functions
 plugins=(
   vi-mode
-  git
+#   git
 #   git-prompt
 #   gitfast
 #   github
-  docker
+#   docker
   dotenv
-  isodate
+#   isodate
 #   iterm2
 #   jira
 #   mix
