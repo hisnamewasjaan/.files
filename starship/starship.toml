@@ -94,6 +94,12 @@ symbol = " "
 [git_commit]
 tag_symbol = '  '
 
+# Show the number of commits ahead of/behind the remote, not just the arrows
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+
 [golang]
 symbol = " "
 
