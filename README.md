@@ -75,7 +75,8 @@ to see other option
 ## iTerm2
 
 - color presets - Pastel (Dark background)
-- preferences saved at [iTerm/com.googlecode.iterm2.plist](iTerm/com.googlecode.iterm2.plist), linked to `~/.iterm/` by [install.conf.yaml](install.conf.yaml)
+- preferences loaded from and saved to [iTerm/](iTerm/) directly, set up by [macos/set-defaults.sh](macos/set-defaults.sh)
+- changes are only written back to the repo when saved: search iTerm's settings for *custom folder*, then set *Save changes* to *Automatically* or click *Save Now*
 - exported profile at [iTerm/Default.json](iTerm/Default.json)
 - [Sync iTerm2 Profile With Dotfiles Repository](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 

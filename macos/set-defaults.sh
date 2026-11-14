@@ -13,28 +13,12 @@ if [ "$(uname -s)" != "Darwin" ]; then
   exit 0
 fi
 
-set +e
-
-disable_agent() {
-  mv "$1" "$1_DISABLED" >/dev/null 2>&1 ||
-    sudo mv "$1" "$1_DISABLED" >/dev/null 2>&1
-}
-
-unload_agent() {
-  launchctl unload -w "$1" >/dev/null 2>&1
-}
-
-test -z "$TRAVIS_JOB_ID" && sudo -v
+sudo -v
 
 echo ""
 echo "› System:"
 echo "  › Disable press-and-hold for keys in favor of key repeat"
 defaults write -g ApplePressAndHoldEnabled -bool false
-
-echo "  › Enable firewall"
-sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
-
-
 
 echo "  › Show the ~/Library folder"
 chflags nohidden ~/Library
@@ -43,22 +27,8 @@ echo "  › Show the /Volumes folder"
 sudo chflags nohidden /Volumes
 
 echo "  › Set a really fast key repeat"
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
-
-# Set a blazingly fast keyboard repeat rate
-#defaults write NSGlobalDomain KeyRepeat -int 1
-#defaults write NSGlobalDomain InitialKeyRepeat -int 10
-
-
-# echo "  › Disable transparency"
-# defaults write com.apple.universalaccess reduceTransparency -bool true
-
-#echo "  › Enable text replacement almost everywhere"
-#defaults write -g WebAutomaticTextReplacementEnabled -bool true
-
-echo "  › Turn off keyboard illumination when computer is not used for 5 minutes"
-defaults write com.apple.BezelServices kDimTime -int 300
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 echo "  › Require password immediately after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPassword -int 1
@@ -70,9 +40,6 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 #echo "  › Don't automatically rearrange Spaces based on most recent use"
 #defaults write com.apple.dock mru-spaces -bool false
-
-echo "  › Increase the window resize speed for Cocoa applications"
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 #echo "  › Disable smart quotes and smart dashes as they're annoying when typing code"
 #defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -92,34 +59,8 @@ defaults write -g com.apple.mouse.scaling 3
 echo "  › Avoid the creation of .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-echo "  › Disable the 'Are you sure you want to open this application?' dialog"
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
 echo "  › Show battery percent"
-# [old] defaults write com.apple.menuextra.battery ShowPercent -bool true
-defaults write com.apple.controlcenter.plist BatteryShowPercentage -bool true
-
-echo "  › Configure Menu Icons"
-defaults write com.apple.systemuiserver menuExtras -array \
-  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-  "/System/Library/CoreServices/Menu Extras/Clock.menu"
-
-# Bluetooth icon enabled use -int 24 to disable
-defaults write com.apple.controlcenter.plist Bluetooth -int 18
-
-# volume icon enabled use -int 24 to disable
-defaults write com.apple.controlcenter.plist Sound -int 18
-
-# wifi icon enabled use -int 24 to disable
-defaults -currentHost write  com.apple.controlcenter WiFi -int 18
-
-
-# if [ ! -z "$TRAVIS_JOB_ID" ]; then
-#   echo "  › Speed up wake from sleep to 24 hours from an hour"
-#   # http://www.cultofmac.com/221392/quick-hack-speeds-up-retina-macbooks-wake-from-sleep-os-x-tips/
-#   sudo pmset -a standbydelay 86400
-# fi
+defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
 
 echo "  › Removing duplicates in the 'Open With' menu"
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \
@@ -130,7 +71,7 @@ echo "  › Removing duplicates in the 'Open With' menu"
 echo ""
 echo "› Finder:"
 echo "  › Always open everything in Finder's list view"
-defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+defaults write com.apple.finder FXPreferredViewStyle Nlsv
 
 echo "  › Set the Finder prefs for showing a few different volumes on the Desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -150,9 +91,6 @@ defaults write com.apple.finder ShowPathbar -bool true
 
 echo "  › Disable the warning before emptying the Trash"
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-echo "  › Save to disk by default, instead of iCloud"
-#defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 echo "  › Display full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -200,9 +138,9 @@ defaults write com.apple.dock appswitcher-all-displays -bool true
 echo ""
 echo "› iTerm2:"
 echo "  › Specify the preferences directory"
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm/"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/iTerm"
 echo "  › Tell iTerm2 to use the custom preferences in the directory"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 #echo "  › Don’t display the annoying prompt when quitting iTerm"
 # defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
@@ -210,9 +148,7 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 echo ""
 echo "› Kill related apps"
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-  "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-  "Terminal" "Transmission" "Photos" "iTerm2"; do
+# Only apps whose settings are changed above, so running apps and terminals are left alone
+for app in "cfprefsd" "ControlCenter" "Dock" "Finder" "SystemUIServer"; do
   killall "$app" > /dev/null 2>&1
 done
-set -e
