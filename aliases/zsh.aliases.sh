@@ -54,14 +54,13 @@ alias sudo='sudo '
 alias week='date +%V'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g'
 
 # Search for formulae with a description matching
-alias brewsearch='brew search --desc --eval-all'
+alias brewsearch='brew search --desc'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -72,26 +71,16 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias ifactive="ifconfig | awk '/^[^[:space:]]/ { if (block ~ /status: active/) printf \"%s\", block; block = \"\" } { block = block \$0 \"\n\" } END { if (block ~ /status: active/) printf \"%s\", block }'"
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+alias flush="sudo dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
-
-# JavaScriptCore REPL
-jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
-[ -e "${jscbin}" ] && alias jsc="${jscbin}";
-unset jscbin;
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
-# Empty the Trash on all mounted volumes and the main HDD.
-# Also, clear Apple’s System Logs to improve shell startup speed.
-# Finally, clear download history from quarantine. https://mths.be/bum
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -104,35 +93,15 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # URL-encode strings
 alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
 
-# Disable Spotlight
-alias spotoff="sudo mdutil -a -i off"
-# Enable Spotlight
-alias spoton="sudo mdutil -a -i on"
-
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
 # Wi-Fi diagnostics (replaces the `airport` CLI removed in macOS 14.4)
 alias wifiinfo='sudo wdutil info'
 
-# Intuitive map function
-# For example, to list all directories that contain a certain file:
-# find . -name .gitattributes | map dirname
-alias map="xargs -n1"
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "${method}"="lwp-request -m '${method}'"
-done
-
 # Lock the screen (when going AFK)
 alias sleep_display="pmset displaysleepnow"
 alias afk="sleep_display"
-
-# Offload RAM to disk and power off RAM => increased batterylife
-alias hibernate25='sudo pmset -b hibernatemode 25'
-
-alias shutdown='sudo shutdown -h now'
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
@@ -141,6 +110,7 @@ alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 # enable/disable ssh adgang
+# Warning: Requires terminal has Full Disk Access.
 alias enableRemoteLogin='sudo systemsetup -setremotelogin on'
 alias disableRemoteLogin='sudo systemsetup -setremotelogin off'
 
@@ -159,8 +129,6 @@ alias rg="rg  --ignore-case --search-zip"
 # enable pcre2 for lookaround and backrefs <https://www.pcre.org>
 alias rgl="rg  --pcre2 --search-zip"
 
-
-alias hisnamewasjaan='security find-generic-password -a hisnamewasjaan@gmail.com -s "Apple ID Authentication" -g'
 alias wifi="security find-generic-password -ga 'tø nest'"
 
 # System software overview
