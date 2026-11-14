@@ -23,7 +23,7 @@
     ~/.zprofile: zsh/zprofile
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/ohmyzsh
-    ~/.p10k.zsh: zsh/p10k.zsh
+    ~/.config/starship.toml: starship/starship.toml
     ~/.sdkman/etc/config: sdkman/config
     ~/.config/htop/htoprc: htop/htoprc
     ~/.iterm/com.googlecode.iterm2.plist: iTerm/com.googlecode.iterm2.plist

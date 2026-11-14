@@ -59,6 +59,8 @@ brew "python@3.15"
 brew "qpdf"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Text interface for Git repositories
 brew "tig"
 # Display directories as trees (with optional color/HTML output)

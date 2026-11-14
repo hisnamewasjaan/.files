@@ -65,7 +65,6 @@ to see other option
   - [fd](https://github.com/sharkdp/fd) - simpler, faster `find`
   - [direnv](https://direnv.net/) - per-directory environment variables
   - [lazygit](https://github.com/jesseduffield/lazygit) - terminal UI for git
-- [Starship](https://starship.rs/) prompt - powerlevel10k is in maintenance-only mode since 2024
 - repo checks: a `make lint` target running [shellcheck](https://www.shellcheck.net/) on `functions/`, `aliases/` and `macos/` scripts, plus a pre-commit hook for shellcheck and commit message format
 - clean-up: remove the `bash/` configs if only zsh is used
 
@@ -92,12 +91,17 @@ to see other option
 
 ## Oh My Zsh
 
-- [powerlevel10k](https://github.com/romkatv/powerlevel10k) theme is kept as a git submodule in [zsh/powerlevel10k](zsh/powerlevel10k) and sourced from [zshrc](zsh/zshrc)
-- update the submodules to their latest upstream versions
+- update the submodule to the latest upstream version
 
 ```shell
-git submodule update --remote zsh/ohmyzsh zsh/powerlevel10k
+git submodule update --remote zsh/ohmyzsh
 ```
+
+## Prompt
+
+- [Starship](https://starship.rs/), installed via the [Brewfile](macos/Brewfile) and initialized in [zshrc](zsh/zshrc)
+- config in [starship/starship.toml](starship/starship.toml), based on the [nerd-font-symbols](https://starship.rs/presets/nerd-font-symbols) preset, linked to `~/.config/starship.toml`
+- requires a [Nerd Font](https://www.nerdfonts.com/) in the terminal
 
 ## Manual settings
 System preferences
