@@ -11,8 +11,19 @@ help: ## This help.
 
 # Install the Homebrew packages the dotfiles depend on, then run dotbot install script
 .PHONY: install
-install: essentials ## Install essential Homebrew packages and run dotbot install script
+install: essentials hooks ## Install essential Homebrew packages, git hooks and run dotbot install script
 	./install
+
+# Run shellcheck on the shell config and macOS scripts (set-hostname.sh is zsh, which shellcheck can't parse)
+.PHONY: lint
+lint: ## Run shellcheck on functions/, aliases/ and macos/ scripts
+	@command -v shellcheck > /dev/null || { echo "shellcheck is required, run: brew install shellcheck"; exit 1; }
+	shellcheck functions/*.sh aliases/*.sh $(filter-out macos/set-hostname.sh,$(wildcard macos/*.sh))
+
+# Use the versioned git hooks in .githooks/ (shellcheck and commit message format)
+.PHONY: hooks
+hooks: ## Enable the git hooks in .githooks/ for this clone
+	git config core.hooksPath .githooks
 
 # Install the Homebrew packages the dotfiles depend on (starship, delta, Nerd Font, ...)
 .PHONY: essentials

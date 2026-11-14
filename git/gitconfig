@@ -52,6 +52,9 @@
 	# Amend the currently staged files to the latest commit
 	amend = commit --amend --reuse-message=HEAD
 
+	# Create a new commit reusing the previous commit message open for edit
+	reuse = commit --reuse-message=HEAD --edit
+
 	# Credit an author on the latest commit
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 

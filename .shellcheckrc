@@ -1,0 +1,2 @@
+# The scripts run in zsh, where `local x=$(cmd)` is fine and the exit status isn't used
+disable=SC2155

@@ -7,6 +7,8 @@ brew "git-extras"
 brew "git-delta"
 # Cross-shell prompt for astronauts (initialized in zsh/zshrc)
 brew "starship"
+# Shell script linter (`make lint` and .githooks/pre-commit)
+brew "shellcheck"
 # Display directories as trees (`tre` in functions/functions.sh)
 brew "tree"
 # JetBrainsMono Nerd Font families (icons in starship/starship.toml, used by iTerm2)

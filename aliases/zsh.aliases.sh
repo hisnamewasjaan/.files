@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# The aliases deliberately expand ${colorflag} and ${SHELL} when defined
+# shellcheck disable=SC2139
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -68,6 +70,7 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Show active network interfaces
+# shellcheck disable=SC2142 # false positive: $0 belongs to awk and is escaped
 alias ifactive="ifconfig | awk '/^[^[:space:]]/ { if (block ~ /status: active/) printf \"%s\", block; block = \"\" } { block = block \$0 \"\n\" } END { if (block ~ /status: active/) printf \"%s\", block }'"
 
 # Flush Directory Service cache

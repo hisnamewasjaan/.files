@@ -2,12 +2,12 @@
 
 # Create a new directory and enter it
 function mkd() {
-	mkdir -p "$@" && cd "$_";
+	mkdir -p "$@" && cd "$_" || return;
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
-	local tmpFile="${@%/}.tar";
+	local tmpFile="${1%/}.tar";
 	tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
 
 	local size=$(
@@ -40,8 +40,7 @@ function targz() {
 }
 
 # Use Git’s colored diff when available
-hash git &>/dev/null;
-if [ $? -eq 0 ]; then
+if hash git &>/dev/null; then
 	function diff() {
 		git diff --no-index --color-words "$@";
 	}

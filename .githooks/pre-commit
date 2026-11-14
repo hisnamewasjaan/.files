@@ -1,0 +1,6 @@
+#!/bin/sh
+# Run shellcheck when staged changes touch the linted shell scripts
+
+git diff --cached --name-only --diff-filter=ACMR | grep -Eq '^(functions|aliases|macos)/.*\.sh$' || exit 0
+
+exec make --no-print-directory lint

@@ -30,6 +30,9 @@ make install
 
 The full set of apps and tools is restored separately with `make brew-restore`.
 
+`make install` also enables the git hooks in [.githooks](.githooks) (`make hooks`): shellcheck on staged shell scripts, and a Conventional Commits check on the commit message.
+Run `make lint` to shellcheck `functions/`, `aliases/` and `macos/` by hand.
+
 ## Usage
 
 Edit [install.conf.yaml](install.conf.yaml) as needed
@@ -70,7 +73,6 @@ to see other option
   - [fd](https://github.com/sharkdp/fd) - simpler, faster `find`
   - [direnv](https://direnv.net/) - per-directory environment variables
   - [lazygit](https://github.com/jesseduffield/lazygit) - terminal UI for git
-- repo checks: a `make lint` target running [shellcheck](https://www.shellcheck.net/) on `functions/`, `aliases/` and `macos/` scripts, plus a pre-commit hook for shellcheck and commit message format
 - clean-up: remove the `bash/` configs if only zsh is used
 
 ## git
