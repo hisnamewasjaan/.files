@@ -1,0 +1,14 @@
+# Ghostty terminal, linked to ~/.config/ghostty/config.ghostty by install.conf.yaml
+# Only settings that differ from the defaults; see them all with: ghostty +show-config --default --docs
+# Reload with cmd+shift+, after editing
+
+# Follow the macOS appearance; starship uses the ANSI colors, so the prompt follows along
+# List the bundled themes with: ghostty +list-themes
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+
+# Window size in columns and rows
+window-width = 80
+window-height = 25
+
+# Keep Option as a normal key, so it types @ { } [ ] etc. on the Danish keyboard layout
+macos-option-as-alt = false

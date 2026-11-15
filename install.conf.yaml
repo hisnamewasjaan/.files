@@ -28,6 +28,7 @@
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/ohmyzsh
     ~/.config/starship.toml: starship/starship.toml
+    ~/.config/ghostty/config.ghostty: ghostty/config.ghostty
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.claude/statusline-command.sh: claude/statusline-command.sh
     ~/.ssh/github-hisnamewasjaan.pub: ssh/github-hisnamewasjaan.pub
