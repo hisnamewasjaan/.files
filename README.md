@@ -2,7 +2,10 @@
 
 Managed using [dotbot](https://github.com/anishathalye/dotbot)
 
-Keeps ohmyzsh as a git submodule.
+Keeps two git submodules:
+
+- [dotbot/](dotbot) - [dotbot](https://github.com/anishathalye/dotbot), runs the linking
+- [zsh/ohmyzsh/](zsh/ohmyzsh) - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
 
 ## Installation
 
