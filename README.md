@@ -49,11 +49,13 @@ to see other option
 ## Todo
 
 - SSH keys and commit signing via [1Password](https://developer.1password.com/docs/ssh/)
-  - replace the RSA keys (`id_rsa`, `hisnamewasjaan_id_rsa`) with an Ed25519 key stored in 1Password
-  - use the 1Password SSH agent in `~/.ssh/config`, so no private key files are kept on disk
-  - sign commits with `gpg.format = ssh` and `commit.gpgsign = true` in [gitconfig](git/gitconfig)
-  - alternative without 1Password: a macOS-native SSH key in the Secure Enclave
-    - non-exportable key, Touch ID on each use, one key per Mac (no iCloud sync - add each Mac's key to GitHub)
+  - done for GitHub (hisnamewasjaan): Ed25519 key in 1Password, used for login and commit signing,
+    set up per machine in `~/.ssh/config` and `~/.gitconfig.local` (not in this repo)
+  - remove the old RSA key `jbe@nineconsult.dk` from GitHub once nothing uses it
+  - other GitHub accounts: one key each in 1Password, with a `Host github-<account>` alias in `~/.ssh/config`
+  - Hetzner and work servers: move to 1Password keys, using `IdentitiesOnly yes` per host
+  - alternative without 1Password, e.g. on the work Mac: a macOS-native SSH key in the Secure Enclave
+    - non-exportable key, Touch ID on each use, one key per Mac
     - create with `sc_auth create-ctk-identity -l ssh -k p-256-ne -t bio`, then `ssh-keygen -w /usr/lib/ssh-keychain.dylib -K -N ""`
     - use `SecurityKeyProvider /usr/lib/ssh-keychain.dylib` in `~/.ssh/config`, and the same key for commit signing
 - [fzf](https://github.com/junegunn/fzf) - fuzzy history search (`Ctrl+R`) and file picker (`Ctrl+T`), via the oh-my-zsh `fzf` plugin

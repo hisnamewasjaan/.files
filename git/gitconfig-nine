@@ -2,3 +2,8 @@
 	name = Jan Bentzen
 	email = jbe@nine.dk
 
+# Don't sign work commits with the personal key from ~/.gitconfig.local
+[commit]
+	gpgsign = false
+[tag]
+	gpgsign = false

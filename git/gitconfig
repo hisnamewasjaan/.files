@@ -154,8 +154,8 @@
 
 [commit]
 
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	#gpgsign = true
+	# Signing is set up per machine in ~/.gitconfig.local (see [include] below)
+	# https://docs.github.com/en/authentication/managing-commit-signature-verification
 
 [diff]
 
@@ -251,6 +251,11 @@
 [user]
 	name = Jan Bentzen
 	email = hisnamewasjaan@gmail.com
+
+# Machine-specific settings, e.g. commit signing with 1Password. Not in this repo,
+# and ignored when missing. Before the work include, so work settings win.
+[include]
+	path = ~/.gitconfig.local
 
 [includeIf "gitdir:~/dev/erst/"]
 	# include work related config
