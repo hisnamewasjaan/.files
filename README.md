@@ -125,9 +125,9 @@ make submodules-update
 
 ## Prompt
 
-- [Starship](https://starship.rs/), installed via the [Brewfile](macos/Brewfile) and initialized in [zshrc](zsh/zshrc)
+- [Starship](https://starship.rs/), installed by `make install` via [macos/Brewfile.essentials](macos/Brewfile.essentials) and initialized in [zshrc](zsh/zshrc)
 - config in [starship/starship.toml](starship/starship.toml), based on the [nerd-font-symbols](https://starship.rs/presets/nerd-font-symbols) preset, linked to `~/.config/starship.toml`
-- requires a [Nerd Font](https://www.nerdfonts.com/) in the terminal - JetBrains Mono Nerd Font is installed via the Brewfile and used by iTerm2
+- requires a [Nerd Font](https://www.nerdfonts.com/) in the terminal - JetBrains Mono Nerd Font is installed via [macos/Brewfile.essentials](macos/Brewfile.essentials) and used by iTerm2
 
 ## Claude Code and other AI tools
 
