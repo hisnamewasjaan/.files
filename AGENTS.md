@@ -18,6 +18,7 @@ The repository is public: never commit secrets, tokens, or machine-specific priv
 | `git/`                                    | Global git config, ignore and attributes; `gitconfig-nine` holds the work identity for `~/dev/erst/` |
 | `macos/`                                  | Brewfiles and one-off macOS setup scripts                                                            |
 | `iTerm/`                                  | iTerm2 preferences, loaded by iTerm directly from this folder                                        |
+| `ssh/`                                    | Public keys only (GitHub key, allowed_signers); `~/.ssh/config` stays out, it lists work hosts       |
 
 ## Conventions
 

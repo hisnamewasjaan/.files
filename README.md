@@ -30,6 +30,8 @@ make install
 
 The full set of apps and tools is restored separately with `make brew-restore`.
 
+For GitHub login and commit signing, also follow [Setting up another Mac](#setting-up-another-mac).
+
 `make install` also enables the git hooks in [.githooks](.githooks) (`make hooks`): shellcheck on staged shell scripts, and a Conventional Commits check on the commit message.
 Run `make lint` to shellcheck `functions/`, `aliases/` and `macos/` by hand.
 
@@ -48,36 +50,50 @@ to see other option
 
 ## Todo
 
-- SSH keys and commit signing via [1Password](https://developer.1password.com/docs/ssh/)
-  - done for GitHub (hisnamewasjaan): Ed25519 key in 1Password, used for login and commit signing,
-    set up per machine in `~/.ssh/config` and `~/.gitconfig.local` (not in this repo)
-  - remove the old RSA key `jbe@nineconsult.dk` from GitHub once nothing uses it
-  - other GitHub accounts: one key each in 1Password, with a `Host github-<account>` alias in `~/.ssh/config`
-  - Hetzner and work servers: move to 1Password keys, using `IdentitiesOnly yes` per host
-  - alternative without 1Password, e.g. on the work Mac: a macOS-native SSH key in the Secure Enclave
-    - non-exportable key, Touch ID on each use, one key per Mac
-    - create with `sc_auth create-ctk-identity -l ssh -k p-256-ne -t bio`, then `ssh-keygen -w /usr/lib/ssh-keychain.dylib -K -N ""`
-    - use `SecurityKeyProvider /usr/lib/ssh-keychain.dylib` in `~/.ssh/config`, and the same key for commit signing
-- [fzf](https://github.com/junegunn/fzf) - fuzzy history search (`Ctrl+R`) and file picker (`Ctrl+T`), via the oh-my-zsh `fzf` plugin
-- zsh plugins
-  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - suggest commands from history as you type
-  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - highlight commands as you type, so typos show before running
-- [mise](https://mise.jdx.dev/) - one version manager for Java, Node and Python, replacing SDKMAN and Homebrew `openjdk`/`node`, pinned per project in `.mise.toml`
-
-### Nice to have
-
-- modern CLI tools
-  - [zoxide](https://github.com/ajeetdsouza/zoxide) - smarter `cd` that learns your most used directories
-  - [bat](https://github.com/sharkdp/bat) - `cat` with syntax highlighting
-  - [eza](https://github.com/eza-community/eza) - modern `ls`
-  - [fd](https://github.com/sharkdp/fd) - simpler, faster `find`
-  - [direnv](https://direnv.net/) - per-directory environment variables
-  - [lazygit](https://github.com/jesseduffield/lazygit) - terminal UI for git
-- clean-up: remove the `bash/` configs if only zsh is used
+See [TODO.md](TODO.md).
 
 ## git
 
 - conditional gitconfig can be included using [includeIf](https://git-scm.com/docs/git-config#_conditional_includes)
+
+## SSH and commit signing
+
+GitHub (account `hisnamewasjaan`) uses an Ed25519 SSH key stored in 1Password, for both login and commit
+signing. The private key never leaves 1Password, and syncs to every Mac signed in to the same 1Password account.
+
+`make install` links the public parts from this repo:
+
+- [ssh/github-hisnamewasjaan.pub](ssh/github-hisnamewasjaan.pub) to `~/.ssh/github-hisnamewasjaan.pub`
+- [ssh/allowed_signers](ssh/allowed_signers) to `~/.ssh/allowed_signers`, to verify signatures locally
+- [git/gitconfig-signing](git/gitconfig-signing) to `~/.gitconfig-signing`, **only** when the 1Password SSH agent
+  holds the key. Elsewhere the link is skipped, and commits are made unsigned instead of failing.
+
+Work repos in `~/dev/erst/` are not signed ([git/gitconfig-nine](git/gitconfig-nine)).
+
+### Setting up another Mac
+
+1. In 1Password, enable *Settings → Developer → Use the SSH agent*, and make sure the
+   *Github (hisnamewasjaan)* key is in the Personal vault.
+2. Add this block to `~/.ssh/config`. The file is not in this repo, as it lists work hosts.
+
+   ```
+   # GitHub only for now, other hosts keep their key files
+   Host github.com
+	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+	# Public key of the hisnamewasjaan account key in 1Password, so only that key is offered
+	IdentityFile ~/.ssh/github-hisnamewasjaan.pub
+	IdentitiesOnly yes
+   ```
+
+   If 1Password offers to edit the file automatically, it adds `Host *` instead, which sends the key to every server.
+3. Run `make install`, or rerun it if it ran before step 1.
+4. Check that it works:
+
+   ```shell
+   ssh -T git@github.com                    # Hi hisnamewasjaan! ...
+   git config --get commit.gpgsign          # true
+   git log -1 --show-signature              # Good "git" signature ... (on a new commit)
+   ```
 
 ## iTerm2
 
