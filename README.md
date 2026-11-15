@@ -9,17 +9,12 @@ Keeps two git submodules:
 
 ## Installation
 
-clone into `~/.dotfiles` with `--recurse-submodules` flag
-```
-git clone --recurse-submodules git@github.com:hisnamewasjaan/.files.git ~/.dotfiles
-```
-
-or get ohmyzsh submodule afterwards
+clone into `~/.dotfiles`
 ```
 git clone git@github.com:hisnamewasjaan/.files.git ~/.dotfiles
-git submodule init
-git submodule update
 ```
+
+`make install` (below) fetches the submodules, so `--recurse-submodules` is not needed.
 
 Adjust [zshrc](zsh/zshrc) to your liking. Theme, plugins etc
 
@@ -122,10 +117,10 @@ Work repos in `~/dev/erst/` are not signed ([git/gitconfig-nine](git/gitconfig-n
 
 ## Oh My Zsh
 
-- update the submodule to the latest upstream version
+- update the submodules (ohmyzsh and dotbot) to the latest upstream version, then commit the new submodule commits
 
 ```shell
-git submodule update --remote zsh/ohmyzsh
+make submodules-update
 ```
 
 ## Prompt

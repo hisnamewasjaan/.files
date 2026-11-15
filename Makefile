@@ -11,8 +11,19 @@ help: ## This help.
 
 # Install the Homebrew packages the dotfiles depend on, then run dotbot install script
 .PHONY: install
-install: essentials hooks ## Install essential Homebrew packages, git hooks and run dotbot install script
+install: submodules essentials hooks ## Fetch submodules, install essential Homebrew packages, git hooks and run dotbot install script
 	./install
+
+# Check out the submodules (dotbot, ohmyzsh) at their pinned commits, also when cloned without --recurse-submodules
+.PHONY: submodules
+submodules: ## Check out the git submodules at their pinned commits
+	git submodule update --init --recursive
+
+# Move the submodules to the latest upstream commit; review and commit the new pointers afterwards
+.PHONY: submodules-update
+submodules-update: ## Update the git submodules to the latest upstream version
+	git submodule update --init --remote
+	git submodule status
 
 # Run shellcheck on the shell config and macOS scripts (set-hostname.sh is zsh, which shellcheck can't parse)
 .PHONY: lint
