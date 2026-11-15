@@ -14,37 +14,28 @@ clone into `~/.dotfiles`
 git clone git@github.com:hisnamewasjaan/.files.git ~/.dotfiles
 ```
 
-`make install` (below) fetches the submodules, so `--recurse-submodules` is not needed.
-
-Adjust [zshrc](zsh/zshrc) to your liking. Theme, plugins etc
-
-
-Requires [Homebrew](https://brew.sh). Installs the packages the dotfiles depend on ([macos/Brewfile.essentials](macos/Brewfile.essentials)) and links the dotfiles with dotbot.
-Run it again after pulling changes.
-
+then install. Requires [Homebrew](https://brew.sh).
 ```
+cd ~/.dotfiles
 make install
 ```
+
+`make install` fetches the submodules (so `--recurse-submodules` is not needed), installs the packages the dotfiles depend on ([macos/Brewfile.essentials](macos/Brewfile.essentials)) and links the dotfiles with dotbot.
+Run it again after pulling changes.
+
+`make install` also enables the git hooks in [.githooks](.githooks) (`make hooks`): shellcheck on staged shell scripts, and a Conventional Commits check on the commit message.
+Run `make lint` to shellcheck `functions/`, `aliases/` and `macos/` by hand.
 
 The full set of apps and tools is restored separately with `make brew-restore`.
 
 For GitHub login and commit signing, also follow [Setting up another Mac](#setting-up-another-mac).
 
-`make install` also enables the git hooks in [.githooks](.githooks) (`make hooks`): shellcheck on staged shell scripts, and a Conventional Commits check on the commit message.
-Run `make lint` to shellcheck `functions/`, `aliases/` and `macos/` by hand.
-
 ## Usage
 
-Edit [install.conf.yaml](install.conf.yaml) as needed
-
-Check [dotbot](https://github.com/anishathalye/dotbot) for more info
-
-## Other
-run
-```shell
-make
-```
-to see other option
+- adjust [zshrc](zsh/zshrc) to your liking: theme, plugins etc
+- edit [install.conf.yaml](install.conf.yaml) to change which files are linked, see [dotbot](https://github.com/anishathalye/dotbot) for the format
+- run `make lint` to shellcheck `functions/`, `aliases/` and `macos/` by hand
+- run `make` to see all other options
 
 ## Todo
 
