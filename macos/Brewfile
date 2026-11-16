@@ -75,8 +75,6 @@ cask "font-jetbrains-mono-nerd-font"
 cask "ghostty"
 # Web browser
 cask "google-chrome"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Free and open-source RSS reader

@@ -136,17 +136,6 @@ defaults write com.apple.dock appswitcher-all-displays -bool true
 #############################
 
 echo ""
-echo "› iTerm2:"
-echo "  › Specify the preferences directory"
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/iTerm"
-echo "  › Tell iTerm2 to use the custom preferences in the directory"
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-#echo "  › Don’t display the annoying prompt when quitting iTerm"
-# defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-
-#############################
-
-echo ""
 echo "› Kill related apps"
 # Only apps whose settings are changed above, so running apps and terminals are left alone
 for app in "cfprefsd" "ControlCenter" "Dock" "Finder" "SystemUIServer"; do

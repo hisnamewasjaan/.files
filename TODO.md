@@ -18,6 +18,8 @@ Ideas and planned improvements for these dotfiles. Done items move to the [READM
   - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - suggest commands from history as you type
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - highlight commands as you type, so typos show before running
 - [mise](https://mise.jdx.dev/) - one version manager for Java, Node and Python, replacing SDKMAN and Homebrew `openjdk`/`node`, pinned per project in `.mise.toml`
+- [lazygit](https://github.com/jesseduffield/lazygit) - terminal UI for git
+
 
 ## Nice to have
 

@@ -4,7 +4,7 @@ export BREW_PREFIX=$([[ "$(arch)" == "arm64" ]] && echo "/opt/homebrew" || echo 
 
 # English messages with Danish dates, currency and sorting (æ, ø, å last).
 # Set here rather than relying on the terminal, as macOS has no en_DK locale for
-# English language + Denmark region, which leaves LANG unset in iTerm.
+# English language + Denmark region, which leaves LANG unset in macOS terminals.
 # LC_NUMERIC stays English, so scripts keep `.` as decimal separator.
 export LANG="en_US.UTF-8"
 export LC_TIME="da_DK.UTF-8"

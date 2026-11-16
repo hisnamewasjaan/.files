@@ -17,7 +17,6 @@ The repository is public: never commit secrets, tokens, or machine-specific priv
 | `aliases/*.aliases.sh`, `functions/*.sh`  | Sourced by `zshrc` in that order: functions first, then aliases                                      |
 | `git/`                                    | Global git config, ignore and attributes; `gitconfig-nine` holds the work identity for `~/dev/erst/` |
 | `macos/`                                  | Brewfiles and one-off macOS setup scripts                                                            |
-| `iTerm/`                                  | iTerm2 preferences, loaded by iTerm directly from this folder                                        |
 | `ssh/`                                    | Public keys only (GitHub key, allowed_signers); `~/.ssh/config` stays out, it lists work hosts       |
 
 ## Conventions
@@ -43,6 +42,4 @@ The repository is public: never commit secrets, tokens, or machine-specific priv
 - Running `macos/*.sh` or `make macos`: they change system settings.
 - Running `make brew`, `make brew-restore` or `make brew-bundle-cleanup`: they rewrite the Brewfile or
   install/uninstall packages, and must never run on the Workbrew-enrolled Mac.
-- Editing `iTerm/com.googlecode.iterm2.plist` by hand: iTerm overwrites it, so change settings in iTerm and
-  use *Save Now* instead.
 - Anything that sends data elsewhere, e.g. `git push` (the repository is public).

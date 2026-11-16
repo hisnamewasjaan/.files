@@ -85,28 +85,6 @@ Work repos in `~/dev/erst/` are not signed ([git/gitconfig-nine](git/gitconfig-n
    git log -1 --show-signature              # Good "git" signature ... (on a new commit)
    ```
 
-## iTerm2
-
-- color presets - Pastel (Dark background)
-- preferences loaded from and saved to [iTerm/](iTerm/) directly, set up by [macos/set-defaults.sh](macos/set-defaults.sh)
-- changes are only written back to the repo when saved: search iTerm's settings for *custom folder*, then set *Save changes* to *Automatically* or click *Save Now*
-- exported profile at [iTerm/Default.json](iTerm/Default.json)
-- [Sync iTerm2 Profile With Dotfiles Repository](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
-
-## macos defaults and cli tools
-
-- [configuring_macos_big_sur_menu_bar_icons_using_dotfiles](https://sander.ginn.it/posts/configuring_macos_big_sur_menu_bar_icons_using_dotfiles/)
-- [executable_dot_macos_config](https://github.com/sanderginn/dotfiles/blob/main/executable_dot_macos_config)
-- [osx-for-hackers](https://www.dynamicguy.com/post/osx-for-hackers/)
-- [https://macos-defaults.com/](https://macos-defaults.com/)
-- [awesome-macos-command-line](https://git.herrbischoff.com/awesome-macos-command-line/about/)
-- [awesome-command-line-apps](https://git.herrbischoff.com/awesome-command-line-apps/about/)
-- [eza](https://github.com/eza-community/eza) - modern `ls`
-- [fd](https://github.com/sharkdp/fd) - simpler, faster `find`
-- [lazygit](https://github.com/jesseduffield/lazygit) - terminal UI for git
-- [learn-anything/command-line-tools](https://github.com/learn-anything/command-line-tools)
-- [An A-Z Index of the Apple macOS command line (macOS bash)](https://ss64.com/mac/)
-
 ## Oh My Zsh
 
 - update the submodules (ohmyzsh and dotbot) to the latest upstream version, then commit the new submodule commits
@@ -115,17 +93,30 @@ Work repos in `~/dev/erst/` are not signed ([git/gitconfig-nine](git/gitconfig-n
 make submodules-update
 ```
 
+## Terminal
+
+- [Ghostty](https://ghostty.org/), installed by `make install` via [macos/Brewfile.essentials](macos/Brewfile.essentials)
+- config in [ghostty/config.ghostty](ghostty/config.ghostty), following the macOS light/dark appearance
+- `ghostty +list-themes` lists the themes, `ghostty +validate-config` checks the config
+
 ## Prompt
 
 - [Starship](https://starship.rs/), installed by `make install` via [macos/Brewfile.essentials](macos/Brewfile.essentials) and initialized in [zshrc](zsh/zshrc)
 - config in [starship/starship.toml](starship/starship.toml), based on the [nerd-font-symbols](https://starship.rs/presets/nerd-font-symbols) preset, linked to `~/.config/starship.toml`
-- requires a [Nerd Font](https://www.nerdfonts.com/) in the terminal - JetBrains Mono Nerd Font is installed via [macos/Brewfile.essentials](macos/Brewfile.essentials) and used by iTerm2
+- requires a [Nerd Font](https://www.nerdfonts.com/) in the terminal
 
 ## Claude Code and other AI tools
 
 - [AGENTS.md](AGENTS.md) describes this repo for AI coding tools; [CLAUDE.md](CLAUDE.md) imports it for Claude Code
 - global Claude Code instructions and status line in [claude/](claude/), linked to `~/.claude/` by [install.conf.yaml](install.conf.yaml)
-- `~/.claude/settings.json` is not managed here, as iTerm2's Claude Code integration writes hooks with absolute paths into it
+- `~/.claude/settings.json` is not managed here, as tools write machine-specific settings into it, such as hooks with absolute paths
+
+## macos defaults and cli tools
+
+- [https://macos-defaults.com/](https://macos-defaults.com/)
+- [awesome-macos-command-line](https://git.herrbischoff.com/awesome-macos-command-line/about/)
+- [awesome-command-line-apps](https://git.herrbischoff.com/awesome-command-line-apps/about/)
+- [An A-Z Index of the Apple macOS command line (macOS bash)](https://ss64.com/mac/)
 
 ## Manual settings
 System preferences
