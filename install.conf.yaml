@@ -35,6 +35,13 @@
     ~/.config/ghostty/config.ghostty: ghostty/config.ghostty
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.claude/statusline-command.sh: claude/statusline-command.sh
+    ~/.claude/skills/commit: claude/skills/commit
+    ~/.claude/skills/adr: claude/skills/adr
+    ~/.claude/skills/vue-component: claude/skills/vue-component
+    ~/.claude/skills/spring-endpoint: claude/skills/spring-endpoint
+    ~/.claude/skills/design-doc: claude/skills/design-doc
+    ~/.claude/skills/review: claude/skills/review
+    ~/.claude/skills/hetzner-cloud: claude/skills/hetzner-cloud
     ~/.ssh/github-hisnamewasjaan.pub: ssh/github-hisnamewasjaan.pub
     ~/.ssh/gitlab-erst.pub: ssh/gitlab-erst.pub
     ~/.ssh/allowed_signers: ssh/allowed_signers

@@ -33,9 +33,9 @@
 ## Code quality and linting
 * Use modern code quality and linting tools in both frontend and backend
 * Include formatting, linting, static analysis, and dependency checks where appropriate
-* SonarQube CLI (Recommended - New)
+* SonarQube CLI (Recommended)
 * Frontend (Vue/TypeScript): ESLint + Prettier by default
-* Vue Mess Detector?  https://github.com/rrd108/vue-mess-detector
+* Vue Mess Detector  https://github.com/rrd108/vue-mess-detector
 * Snyk?
 * CodeClimate?
 * Backend (Java): Spotless for formatting, plus Checkstyle or PMD/SpotBugs for static analysis
