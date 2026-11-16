@@ -9,29 +9,30 @@ Keeps two git submodules:
 
 ## Installation
 
-clone into `~/.dotfiles`
+Requires [Homebrew](https://brew.sh).
+
+`git clone` and `make install`:
+
 ```
 git clone git@github.com:hisnamewasjaan/.files.git ~/.dotfiles
-```
-
-then install. Requires [Homebrew](https://brew.sh).
-```
 cd ~/.dotfiles
 make install
 ```
 
-`make install` fetches the submodules (so `--recurse-submodules` is not needed), installs the packages the dotfiles depend on ([macos/Brewfile.essentials](macos/Brewfile.essentials)) and links the dotfiles with dotbot.
+### `make install` runs these steps in order:
+
+1. `make submodules`: checks out the submodules (dotbot, oh-my-zsh), so `--recurse-submodules` is not needed.
+2. `make essentials`: installs the Homebrew packages the dotfiles depend on ([macos/Brewfile.essentials](macos/Brewfile.essentials)).
+3. `make hooks`: enables the git hooks in [.githooks](.githooks): shellcheck on staged shell scripts, and a Conventional Commits check on the commit message.
+4. `./install`: links the dotfiles into `$HOME` with dotbot.
+
 Run it again after pulling changes.
-
-`make install` also enables the git hooks in [.githooks](.githooks) (`make hooks`): shellcheck on staged shell scripts, and a Conventional Commits check on the commit message.
-Run `make lint` to shellcheck `functions/`, `aliases/` and `macos/` by hand.
-
-The full set of apps and tools is restored separately with `make brew-restore`.
 
 For GitHub login and commit signing, also follow [Setting up another Mac](#setting-up-another-mac).
 
 ## Usage
 
+- full set of apps and tools can be restored separately with `make brew-restore`.
 - adjust [zshrc](zsh/zshrc) to your liking: theme, plugins etc
 - edit [install.conf.yaml](install.conf.yaml) to change which files are linked, see [dotbot](https://github.com/anishathalye/dotbot) for the format
 - run `make lint` to shellcheck `functions/`, `aliases/` and `macos/` by hand
@@ -68,10 +69,10 @@ Work repos in `~/dev/erst/` are not signed ([git/gitconfig-nine](git/gitconfig-n
    ```
    # GitHub only for now, other hosts keep their key files
    Host github.com
-	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-	# Public key of the hisnamewasjaan account key in 1Password, so only that key is offered
-	IdentityFile ~/.ssh/github-hisnamewasjaan.pub
-	IdentitiesOnly yes
+   	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+   	# Public key of the hisnamewasjaan account key in 1Password, so only that key is offered
+   	IdentityFile ~/.ssh/github-hisnamewasjaan.pub
+   	IdentitiesOnly yes
    ```
 
    If 1Password offers to edit the file automatically, it adds `Host *` instead, which sends the key to every server.

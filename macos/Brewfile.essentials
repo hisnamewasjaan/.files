@@ -1,4 +1,4 @@
-# Packages the dotfiles themselves depend on, installed by `make install`.
+# Packages the dotfiles themselves depend on (sort of), installed by `make install`.
 # Everything else lives in the full Brewfile, restored with `make brew-restore`.
 
 # Small git utilities (completion sourced in zsh/zshrc)
@@ -11,5 +11,5 @@ brew "starship"
 brew "shellcheck"
 # Display directories as trees (`tre` in functions/functions.sh)
 brew "tree"
-# JetBrainsMono Nerd Font families (icons in starship/starship.toml, used by iTerm2)
-cask "font-jetbrains-mono-nerd-font"
+# Terminal emulator with Nerd Font symbols built in
+cask "ghostty"
