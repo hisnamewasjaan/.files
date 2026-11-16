@@ -2,8 +2,14 @@
 	name = Jan Bentzen
 	email = jbe@nine.dk
 
-# Don't sign work commits with the personal key from ~/.gitconfig.local
+# Don't sign work commits with the personal key from ~/.gitconfig-signing,
+# unless the work key is available (see the include below)
 [commit]
 	gpgsign = false
 [tag]
 	gpgsign = false
+
+# Sign with the work key where the 1Password agent holds it (git/gitconfig-nine-signing);
+# ignored when missing
+[include]
+	path = ~/.gitconfig-nine-signing

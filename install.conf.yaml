@@ -16,6 +16,10 @@
     ~/.gitconfig-signing:
       path: git/gitconfig-signing
       if: 'SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" ssh-add -L 2>/dev/null | grep -qF "$(cut -d" " -f2 ssh/github-hisnamewasjaan.pub)"'
+    # Only where the 1Password SSH agent holds the work signing key
+    ~/.gitconfig-nine-signing:
+      path: git/gitconfig-nine-signing
+      if: 'SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" ssh-add -L 2>/dev/null | grep -qF "$(cut -d" " -f2 ssh/gitlab-erst.pub)"'
     ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore
     ~/.tmux.conf: tmux.conf
@@ -32,6 +36,7 @@
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.claude/statusline-command.sh: claude/statusline-command.sh
     ~/.ssh/github-hisnamewasjaan.pub: ssh/github-hisnamewasjaan.pub
+    ~/.ssh/gitlab-erst.pub: ssh/gitlab-erst.pub
     ~/.ssh/allowed_signers: ssh/allowed_signers
     ~/.sdkman/etc/config: sdkman/config
     ~/.config/htop/htoprc: htop/htoprc
