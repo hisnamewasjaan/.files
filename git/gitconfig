@@ -262,3 +262,8 @@
 [includeIf "gitdir:~/dev/erst/"]
 	# include work related config
 	path = .gitconfig-nine
+# Same for erst repos cloned elsewhere (needs git 2.36+, and a remote to match)
+[includeIf "hasconfig:remote.*.url:git@git.erst.dk:*/**"]
+	path = .gitconfig-nine
+[includeIf "hasconfig:remote.*.url:https://git.erst.dk/**"]
+	path = .gitconfig-nine
