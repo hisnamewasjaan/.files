@@ -1,16 +1,8 @@
 tap "docker/tap", trusted: true
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
-# CMS for the command-line
-brew "blazeblogger"
-# Core application library for C
-brew "glib"
-# Vector graphics library with cross-device output support
-brew "cairo"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
-# Toolkit for image loading and pixel buffer manipulation
-brew "gdk-pixbuf"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -19,28 +11,12 @@ brew "git"
 brew "git-delta"
 # Small git utilities
 brew "git-extras"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
-# GNU triangulated surface library
-brew "gts"
-# OpenType text shaping engine
-brew "harfbuzz"
-# Framework for layout and rendering of i18n text
-brew "pango"
-# Library to render SVG files using Cairo
-brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Improved top (interactive process viewer)
 brew "htop"
-# Mac App Store command-line interface
-brew "mas"
 # Run a Kubernetes cluster locally
 brew "minikube"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
-# Highly capable, feature-rich programming language
-brew "perl"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.15"
 # Tools for and transforming and inspecting PDF files
@@ -85,19 +61,7 @@ cask "raycast"
 cask "docker/tap/sbx", trusted: true
 # Team communication and collaboration software
 cask "slack"
-# Native desktop client for WhatsApp
-cask "whatsapp"
-mas "GarageBand", id: 682658836
 mas "Hush", id: 1544743900
-mas "iMovie", id: 408981434
 mas "Ka-Block!", id: 1335413823
-mas "Keynote", id: 409183694
 mas "Keys", id: 1494642810
-mas "MILK Books", id: 1486465681
-mas "Mimeo Photos", id: 1282504627
-mas "Motif", id: 1404636482
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Raycast Companion", id: 6738274497
-mas "Spaceland", id: 1471019397
-mas "WhatsApp 2", id: 310633997
