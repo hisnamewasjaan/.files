@@ -28,6 +28,8 @@ make install
 
 Run it again after pulling changes.
 
+On a brand new Mac, follow [FRESH-MAC.md](FRESH-MAC.md) instead: it has the full order of steps.
+
 For GitHub login and commit signing, also follow [Setting up another Mac](#setting-up-another-mac).
 
 ## Usage
