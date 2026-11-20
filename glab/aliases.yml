@@ -1,0 +1,4 @@
+ci: pipeline ci
+co: mr checkout
+browse: '!open "$(git remote get-url origin | sed -E "s#^git@([^:]+):#https://\1/#; s#\.git\$##")"'
+mrc: mr create --fill --fill-commit-body --push --remove-source-branch --web

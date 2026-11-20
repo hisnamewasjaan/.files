@@ -32,6 +32,8 @@
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/ohmyzsh
     ~/.config/starship.toml: starship/starship.toml
+    ~/.config/glab-cli/config.yml: glab/config.yml
+    ~/.config/glab-cli/aliases.yml: glab/aliases.yml
     ~/.config/ghostty/config.ghostty: ghostty/config.ghostty
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.claude/statusline-command.sh: claude/statusline-command.sh
