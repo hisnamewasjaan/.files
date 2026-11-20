@@ -33,10 +33,6 @@ echo "  › Set a really fast key repeat"
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
-echo "  › Require password immediately after sleep or screen saver begins"
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
 echo "  › Always show scrollbars"
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
@@ -64,10 +60,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 echo "  › Show battery percent"
 defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
-
-echo "  › Removing duplicates in the 'Open With' menu"
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \
-  -kill -r -domain local -domain system -domain user
 
 #############################
 
@@ -102,7 +94,7 @@ echo "  › Disable the warning when changing a file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 echo "  › Show Hidden Files & Folders"
-defaults write com.apple.finder AppleShowAllFiles -boolean true
+defaults write com.apple.finder AppleShowAllFiles -bool true
 
 #############################
 
@@ -120,7 +112,6 @@ defaults write com.apple.dock tilesize -int 48
 
 echo "  › Speeding up Mission Control animations and grouping windows by application"
 defaults write com.apple.dock expose-animation-duration -float 0.1
-defaults write com.apple.dock "expose-group-by-app" -bool true
 
 echo "  › Remove the auto-hiding Dock delay"
 defaults write com.apple.dock autohide-delay -float 0
