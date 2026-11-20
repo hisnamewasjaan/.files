@@ -47,5 +47,4 @@
     ~/.ssh/github-hisnamewasjaan.pub: ssh/github-hisnamewasjaan.pub
     ~/.ssh/gitlab-erst.pub: ssh/gitlab-erst.pub
     ~/.ssh/allowed_signers: ssh/allowed_signers
-    ~/.sdkman/etc/config: sdkman/config
     ~/.config/htop/htoprc: htop/htoprc
