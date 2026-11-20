@@ -118,11 +118,6 @@ make submodules-update
 - [awesome-command-line-apps](https://git.herrbischoff.com/awesome-command-line-apps/about/)
 - [An A-Z Index of the Apple macOS command line (macOS bash)](https://ss64.com/mac/)
 
-## Manual settings
-System preferences
-
-- Disable 'Close windows when quitting an application'
-
 ## Zsh load order
 
 `.zshenv` → `.zprofile` → `.zshrc` → `.zlogin` → `.zlogout`

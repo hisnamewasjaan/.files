@@ -20,6 +20,9 @@ echo "› System:"
 echo "  › Disable press-and-hold for keys in favor of key repeat"
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+echo "  › Keep windows when quitting an application (disables 'Close windows when quitting an application')"
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool true
+
 echo "  › Show the ~/Library folder"
 chflags nohidden ~/Library
 
