@@ -1,1 +1,4 @@
 [ -n "$PS1" ] && source ~/.bash_profile;
+
+# Atuin shell history; needs bash-preexec or ble.sh to record commands
+command -v atuin >/dev/null && eval "$(atuin init bash)"

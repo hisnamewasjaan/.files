@@ -56,6 +56,7 @@ Log out and back in, so the keyboard and Dock settings apply everywhere.
 - Personal Mac: `make brew-restore` installs the full [Brewfile](macos/Brewfile).
 - Work Mac (Workbrew): never run `make brew-restore`. Install what the shell config uses by hand:
   `ripgrep` (`rg` aliases), `node` (`update` alias), `gh` and `docker-desktop` and `docker/tap/sbx` (sbx functions).
+- Atuin: `atuin import auto` imports the existing shell history.
 
 ## 6. Check
 

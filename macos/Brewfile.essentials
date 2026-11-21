@@ -7,6 +7,8 @@ brew "git-extras"
 brew "git-delta"
 # Cross-shell prompt for astronauts (initialized in zsh/zshrc)
 brew "starship"
+# Searchable, synced shell history (initialized in zsh/zshrc, hooked into Claude Code in claude/settings.json)
+brew "atuin"
 # Shell script linter (`make lint` and .githooks/pre-commit)
 brew "shellcheck"
 # Display directories as trees (`tre` in functions/functions.sh)

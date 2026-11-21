@@ -109,6 +109,11 @@ make submodules-update
 - config in [starship/starship.toml](starship/starship.toml), based on the [nerd-font-symbols](https://starship.rs/presets/nerd-font-symbols) preset, linked to `~/.config/starship.toml`
 - requires a [Nerd Font](https://www.nerdfonts.com/) in the terminal
 
+## Shell history
+
+- [Atuin](https://atuin.sh/), installed by `make install` via [macos/Brewfile.essentials](macos/Brewfile.essentials) and initialized in [zshrc](zsh/zshrc); replaces Ctrl-R and the Up arrow with a searchable history
+- one-off per machine: `atuin import auto` imports the existing shell history
+
 ## Claude Code and other AI tools
 
 - [AGENTS.md](AGENTS.md) describes this repo for AI coding tools; [CLAUDE.md](CLAUDE.md) imports it for Claude Code
