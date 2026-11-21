@@ -100,6 +100,8 @@ make submodules-update
 - [Ghostty](https://ghostty.org/), installed by `make install` via [macos/Brewfile.essentials](macos/Brewfile.essentials)
 - config in [ghostty/config.ghostty](ghostty/config.ghostty), following the macOS light/dark appearance
 - `ghostty +list-themes` lists the themes, `ghostty +validate-config` checks the config
+- [Rex](https://www.superlogical.com/rex/), the terminal multiplexer: config in [rex/init.lua](rex/init.lua), linked to `~/.config/rex/init.lua`, empty for now so Rex uses its default key bindings. The theme is set in Rex's Settings, not here.
+- `REX_CONFIG=~/.config/rex/init.lua rex config check` checks the Rex config; choose *Reload Config* in Rex to apply changes
 
 ## Prompt
 

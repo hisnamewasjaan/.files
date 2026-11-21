@@ -35,6 +35,7 @@
     ~/.config/glab-cli/config.yml: glab/config.yml
     ~/.config/glab-cli/aliases.yml: glab/aliases.yml
     ~/.config/ghostty/config.ghostty: ghostty/config.ghostty
+    ~/.config/rex/init.lua: rex/init.lua
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.claude/statusline-command.sh: claude/statusline-command.sh
     ~/.claude/settings.json: claude/settings.json

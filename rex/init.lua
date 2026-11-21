@@ -1,0 +1,2 @@
+-- Rex config, linked to ~/.config/rex/init.lua by install.conf.yaml.
+-- Empty for now: Rex runs with its default key bindings.
