@@ -19,6 +19,14 @@ Ideas and planned improvements for these dotfiles. Done items move to the [READM
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - highlight commands as you type, so typos show before running
 - [mise](https://mise.jdx.dev/) - one version manager for Java, Node and Python, replacing SDKMAN and Homebrew `openjdk`/`node`, pinned per project in `.mise.toml`
 - [lazygit](https://github.com/jesseduffield/lazygit) - terminal UI for git
+- Docker Sandboxes: a custom [kit](https://docs.docker.com/ai/sandboxes/customize/) so every sandbox gets `claude/CLAUDE.md`
+  - sandboxes never read the host `~/.claude`, and recreate agent config on each `sbx create`
+  - generate a mixin kit from `claude/CLAUDE.md` using the `com.docker.sandbox/agent-context@1` capability,
+    then run with `sbx run claude --kit <kit>`
+  - first study the [claude-mixin example](https://github.com/docker/sandbox-kit-spec/tree/main/examples/claude-mixin):
+    where the context ends up, and whether `settings.json` can be supplied the same way
+  - stopgap per sandbox: append `@/Users/<you>/.dotfiles/claude/CLAUDE.md` to the sandbox's
+    `~/.claude/CLAUDE.md`, with `~/.dotfiles:ro` mounted as an extra workspace
 
 
 ## Nice to have
