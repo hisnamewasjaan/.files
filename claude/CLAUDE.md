@@ -61,7 +61,10 @@
 * Keep documentation practical and maintainable, not bloated
 
 ## Working style
-* Prefer making reasonable assumptions and moving forward rather than blocking on minor uncertainties
+* Never assume how I use a tool, service or workflow (e.g. sync, accounts, which machines). If the
+  change or docs depend on it, ask first.
+* Only document or configure what I have stated or what is in the repo; ask before adding anything else.
+* Minor, easily reversible code choices may be assumed, but name each assumption in the reply.
 * Ask clarifying questions when a decision materially affects the implementation
 * Prefer editing existing code and conventions over introducing unnecessary new patterns
 * Keep code readable and idiomatic for the chosen stack
