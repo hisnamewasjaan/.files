@@ -27,3 +27,8 @@ Ideas and planned improvements for these dotfiles. Done items move to the [READM
   - [zoxide](https://github.com/ajeetdsouza/zoxide) - smarter `cd` that learns your most used directories
   - [bat](https://github.com/sharkdp/bat) - `cat` with syntax highlighting
 - clean-up: remove the `bash/` configs if only zsh is used
+
+
+## dotfiles inspiration
+
+- https://www.prskavec.net/post/my-dotfiles-and-the-tools-i-use/

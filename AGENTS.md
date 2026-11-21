@@ -43,3 +43,7 @@ The repository is public: never commit secrets, tokens, or machine-specific priv
 - Running `make brew`, `make brew-restore` or `make brew-bundle-cleanup`: they rewrite the Brewfile or
   install/uninstall packages, and must never run on the Workbrew-enrolled Mac.
 - Anything that sends data elsewhere, e.g. `git push` (the repository is public).
+
+## dotfiles inspiration
+
+- https://www.prskavec.net/post/my-dotfiles-and-the-tools-i-use/
