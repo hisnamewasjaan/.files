@@ -37,6 +37,7 @@
     ~/.config/ghostty/config.ghostty: ghostty/config.ghostty
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.claude/statusline-command.sh: claude/statusline-command.sh
+    ~/.claude/settings.json: claude/settings.json
     ~/.claude/skills/commit: claude/skills/commit
     ~/.claude/skills/adr: claude/skills/adr
     ~/.claude/skills/vue-component: claude/skills/vue-component
